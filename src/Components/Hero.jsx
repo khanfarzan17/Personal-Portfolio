@@ -2,6 +2,12 @@ import React from "react";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
+  const phoneNumber = "917631528775"; // Your WhatsApp number with country code
+  const message = "Hello, I would like to connect with you!"; // Your custom message
+
+  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+    message
+  )}`;
   return (
     <section className={styles.container}>
       <div className={styles.content}>
@@ -9,8 +15,13 @@ const Hero = () => {
         <p className={styles.description}>
           I am Full Stack Developer from India{" "}
         </p>
-        <a href="mailto:khanfarzan200@gmail.com" className={styles.contactBtn}>
-          Contact me{" "}
+        <a
+          href={whatsappLink}
+          className={styles.contactBtn}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hire Me
         </a>
       </div>
       <img

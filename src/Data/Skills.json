@@ -1,66 +1,85 @@
 [
-    {
-        "title":"HTML",
-        "imgesrc":"assests/skills/html.png"
-    }
-    ,
-    {
-        "title":"CSS",
-        "imgesrc":"assests/skills/css.png"
-    },
-    {
-        "title":"JavaScript",
-        "imgesrc":"assests/skills/JAVASCRIPT.png"
-    },
-    {
-        "title":"React JS",
-        "imgesrc":"assests/skills/react.png"
-    },
-    {
-        "title":"Node JS",
-        "imgesrc":"assests/skills/node.png"
-    },
-    {
-        "title":"Express JS",
-        "imgesrc":"assests/skills/EXPRESS.png"
-    }
-    ,{
-        "title":"Mongo DB",
-        "imgesrc":"assests/skills/mongodb.png"
-    }
-    ,{
-        "title":"My SQL",
-        "imgesrc":"assests/skills/MYSQL.png"
-    }
- 
-    ,{
-        "title":"AWS",
-        "imgesrc":"assests/skills/AWS.png"
-    },
-    {
-        "title":"TypeScript",
-        "imgesrc":"assests/skills/TYPESCRIPT.png"
-    },
-    {
-        "title":"Git",
-        "imgesrc":"assests/skills/GIT.png"
-    },
-    {
-        "title":"GitHub",
-        "imgesrc":"assests/skills/GITHUB.png"
-    },
-    {
-        "title":"Jest",
-        "imgesrc":"assests/skills/JEST.png"
-    },
-    {
-        "title":"TailWind",
-        "imgesrc":"assests/skills/TAILWIND.png"
-    },
-   
-    {
-        "title":"PostMan API",
-        "imgesrc":"assests/skills/POSTMAN.png"
-    }
+  {
+    "title": "HTML",
+    "imgesrc": "assests/skills/html.png"
+  },
+  {
+    "title": "CSS",
+    "imgesrc": "assests/skills/css.png"
+  },
+  {
+    "title": "JavaScript",
+    "imgesrc": "assests/skills/JAVASCRIPT.png"
+  },
+  {
+    "title": "React JS",
+    "imgesrc": "assests/skills/react.png"
+  },
+  {
+    "title": "Redux ",
+    "imgesrc": "assests/skills/REDUX.png"
+  },
 
+  {
+    "title": "Node JS",
+    "imgesrc": "assests/skills/node.png"
+  },
+  {
+    "title": "Express JS",
+    "imgesrc": "assests/skills/EXPRESS.png"
+  },
+  {
+    "title": "Mongo DB",
+    "imgesrc": "assests/skills/mongodb.png"
+  },
+  {
+    "title": "My SQL",
+    "imgesrc": "assests/skills/MYSQL.png"
+  },
+
+  {
+    "title": "AWS",
+    "imgesrc": "assests/skills/AWS.png"
+  },
+  {
+    "title": "TypeScript",
+    "imgesrc": "assests/skills/TYPESCRIPT.png"
+  },
+  {
+    "title": "Git",
+    "imgesrc": "assests/skills/GIT.png"
+  },
+  {
+    "title": "GitHub",
+    "imgesrc": "assests/skills/GITHUB.png"
+  },
+  {
+    "title": "Jest",
+    "imgesrc": "assests/skills/JEST.png"
+  },
+  {
+    "title": "TailWind",
+    "imgesrc": "assests/skills/TAILWIND.png"
+  },
+
+  {
+    "title": "PostMan",
+    "imgesrc": "assests/skills/POSTMAN.png"
+  },
+  {
+    "title": "Chat GPT",
+    "imgesrc": "assests/skills/CHATGPT.png"
+  },
+  {
+    "title": "ASP DotNet ",
+    "imgesrc": "assests/skills/ASPDOTNET.png"
+  },
+  {
+    "title": "MUI",
+    "imgesrc": "assests/skills/MUI.png"
+  },
+  {
+    "title": "C#",
+    "imgesrc": "assests/skills/CSHARP.png"
+  }
 ]
