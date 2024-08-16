@@ -1,0 +1,33 @@
+[
+    {
+        "role":"Software Engineer",
+        "Oraganization":"SLK Software Private Limited",
+        "startDate":"September 2023",
+        "endDate":"Present",
+        "experience":" Worked on Banking Domain as a Full stack Developer  ",
+        "imgesrc":"assests/expereince/SLK.png",
+        "Location":"Bangalore"
+    }
+    ,
+    {
+        "role":"FrontEnd Developer",
+        "Oraganization":"Varcons Technologies",
+        "startDate":"August  2022",
+        "endDate":"October 2022",
+        "experience":" Worked as FrontEnd Developer with the latest Framework for Single Page Application and improve Search Engine Optimization  ",
+        "imgesrc":"assests/expereince/Varcons.png",
+        "Location":"Bangalore"
+
+    },
+    {
+        "role":"Intern",
+        "Oraganization":"Verzeo Technology",
+        "startDate":"April 2022",
+        "endDate":"June 2022",
+        "experience":" Worked on Amzon web services",
+        "imgesrc":"assests/expereince/Verzeo.png",
+        "Location":"Bangalore"
+
+
+    }
+]
