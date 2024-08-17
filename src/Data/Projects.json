@@ -1,11 +1,11 @@
 [
   {
-    "title": "Project A",
+    "title": "Dowry Calculator",
     "imgSrc": "/assests/projects/project.png",
-    "description": "This is a project A",
-    "technology": ["React", "Redux", "Tailwind","MUI"],
-    "githubLink": "http://www.example.com",
-    "liveLink": "http://www.example.com"
+    "description": "Projects Can Predicts your maximum limit to get Dowry based on your Input Provided ",
+    "technology": ["React","JavaScript"],
+    "githubLink": "https://github.com/khanfarzan17/25-Dowray-Calculator",
+    "liveLink": "https://zingy-souffle-1a53bd.netlify.app/"
   },
 
   {

@@ -1,4 +1,5 @@
 @import "../vars.css";
+
 .navbar {
   position: relative;
   display: flex;
@@ -16,6 +17,12 @@
   color: var(--color-text);
 }
 
+.dateTime {
+  font-size: 18px;
+  font-weight: 200;
+  margin-left: 20px; 
+  white-space: nowrap; 
+}
 
 .menuBtn {
   display: none;
@@ -23,6 +30,7 @@
 
 .menu {
   display: flex;
+  align-items: center; 
 }
 
 .menuItems {
