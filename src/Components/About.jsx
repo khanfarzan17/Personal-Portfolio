@@ -7,13 +7,17 @@ const About = () => {
       <h2 className={styles.title}>About Me</h2>
       <div className={styles.content}>
         <img
-          src="assests/about/aboutImage.png"
+          src="/assests/about/aboutImage.png"
           alt="Me sitting with a laptop"
           className={styles.aboutImage}
         />
         <ul className={styles.aboutItems}>
           <li className={styles.aboutItem}>
-            <img src="assests/about/cursorIcon.png" alt="Cursor icon" />
+            <img
+              src="/assests/about/cursorIcon.png"
+              alt="Cursor icon"
+              className={styles.icon}
+            />
             <div className={styles.aboutItemText}>
               <h3>Frontend Developer</h3>
               <p>
@@ -23,22 +27,30 @@ const About = () => {
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src="assests/about/serverIcon.png" alt="Server icon" />
+            <img
+              src="/assests/about/serverIcon.png"
+              alt="Server icon"
+              className={styles.icon}
+            />
             <div className={styles.aboutItemText}>
               <h3>Backend Developer</h3>
               <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
+                I have experience developing fast and optimized back-end systems
+                and APIs.
               </p>
             </div>
           </li>
           <li className={styles.aboutItem}>
-            <img src="assests/about/uiIcon.png" alt="UI icon" />
+            <img
+              src="/assests/about/uiIcon.png"
+              alt="UI icon"
+              className={styles.icon}
+            />
             <div className={styles.aboutItemText}>
               <h3>UI Designer</h3>
               <p>
                 I have designed multiple landing pages and have created design
-                systems as well
+                systems as well.
               </p>
             </div>
           </li>
