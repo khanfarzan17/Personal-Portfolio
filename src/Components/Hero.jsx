@@ -3,11 +3,12 @@ import styles from "./Hero.module.css";
 
 const Hero = () => {
   const phoneNumber = "917631528775";
-  const message = "Thanks For Contacting Farzan !";
+  const message = "Thanks For Contacting Farzan!";
 
   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
   )}`;
+
   return (
     <section className={styles.container}>
       <div className={styles.content}>
@@ -15,7 +16,7 @@ const Hero = () => {
         <p className={styles.description}>
           Full Stack Developer with expertise in crafting responsive web
           applications, seamlessly integrating front-end and back-end
-          technologies to deliver dynamic user experiences
+          technologies to deliver dynamic user experiences.
         </p>
         <a
           href={whatsappLink}
@@ -27,12 +28,13 @@ const Hero = () => {
         </a>
       </div>
       <img
-        src="assests/hero/profilepicture1.png"
-        alt="hero image"
+        src="/assests/hero/profilepicture1.png"
+        alt="Profile picture of Farzan Khan"
         className={styles.heroImage}
+        loading="lazy"
       />
-      <div className={styles.topblur}></div>
-      <div className={styles.bottomblur}></div>
+      <div className={styles.topBlur}></div>
+      <div className={styles.bottomBlur}></div>
     </section>
   );
 };
