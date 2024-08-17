@@ -51,16 +51,37 @@
 }
 
 .heroImage {
-    width: 50%; 
+    width: 50%;
     max-width: 500px;
-    z-index: 1; 
+    z-index: 1;
     animation-name: floating;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    border-radius: 30%; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-}
+    border-radius: 30%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 5px solid;
+    animation: floating 3s infinite ease-in-out, borderAnimation 5s linear infinite;
+  }
+  
+
+@keyframes borderAnimation {
+    0% {
+      border: 5px solid  rgba(255, 255, 255, 0) 0%,
+      
+    }
+   
+    50% {
+       border: 5px solid rgba(102, 102, 102, 0.75);
+        
+    }
+   
+    100% {
+      border: 5px solid rgba(255, 255, 255, 0) 100%
+    }
+  }
+  
+
 
 @keyframes floating {
     0% {
