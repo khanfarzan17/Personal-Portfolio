@@ -18,7 +18,7 @@ const About = () => {
               <h3>Frontend Developer</h3>
               <p>
                 I'm a frontend developer with experience in building responsive
-                and optimized sites
+                and optimized sites.
               </p>
             </div>
           </li>
