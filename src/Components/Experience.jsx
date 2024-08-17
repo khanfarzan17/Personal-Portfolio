@@ -2,6 +2,7 @@ import React from "react";
 import skills from "../Data/Skills.json";
 import history from "../Data/History.json";
 import styles from "./Experience.module.css";
+import { MdDownload } from "react-icons/md";
 const Experience = () => {
   return (
     <section className={styles.container} id="experience">
@@ -42,7 +43,9 @@ const Experience = () => {
             href="/assests/resume/Farzan_Ateeque_Khan_Experence_Resume.pdf"
             download="Farzan-khan.pdf"
           >
-            <button className={styles.Downloadbtn}>Download My CV</button>
+            <button className={styles.Downloadbtn}>
+              Download My CV <MdDownload />
+            </button>
           </a>
         </ul>
       </div>
