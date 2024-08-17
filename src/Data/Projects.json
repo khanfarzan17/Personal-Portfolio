@@ -15,14 +15,5 @@
     "technology": [ "Redux-Toolkit", "Tailwind"],
     "githubLink": "https://github.com/khanfarzan17/20-Food-App-Using-Redux-toolKit",
     "liveLink": "https://oota.netlify.app/"
-  },
-
-  {
-    "title": "Project C",
-    "imgSrc": "/assests/projects/project.png",
-    "description": "This is a project C",
-    "technology": ["React", "Redux", "Tailwind","TS"],
-    "githubLink": "http://www.example.com",
-    "liveLink": "http://www.example.com"
   }
 ]
