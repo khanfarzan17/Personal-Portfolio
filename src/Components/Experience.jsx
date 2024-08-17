@@ -41,7 +41,7 @@ const Experience = () => {
           <a
             className={styles.link}
             href="/assests/resume/Farzan_Ateeque_Khan_Experence_Resume.pdf"
-            download="Farzan-khan.pdf"
+            download="Farzan-khan-Resume.pdf"
           >
             <button className={styles.Downloadbtn}>
               Download My CV <MdDownload />

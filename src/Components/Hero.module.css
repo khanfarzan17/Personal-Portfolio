@@ -1,6 +1,4 @@
-@import "../vars.css";
-
-.container{
+.container {
     position: relative;
     display: flex;
     align-items: center;
@@ -9,44 +7,49 @@
     z-index: 1;
     margin-left: 10%;
     margin-right: 10%;
-
 }
-.content{
+
+.content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     color: var(--color-text);
     z-index: 1;
 }
-.title{
+
+.title {
     font-size: 72px;
     font-weight: 900;
     margin-bottom: 33px;
     font-family: var(--font-roboto);
-    background: linear-gradient(90deg,rgba(255,255,255,1)70%,rgba(255,255,255,0)120%);
-
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 120%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+   
 }
-.description{
+
+.description {
     font-size: 30px;
     font-family: var(--font-roboto);
     margin-bottom: 52px;
 }
-.contactBtn{
+
+.contactBtn {
     text-decoration: none;
     background-color: var(--color-primary);
     color: var(--color-text);
-    border-radius:10px;
+    border-radius: 10px;
     font-size: 30px;
     font-weight: 600;
     padding: 17px 26px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
 }
-.contactBtn:hover{
+
+.contactBtn:hover {
     background-color: var(--color-text);
     color: var(--color-secondary);
 }
+
 .heroImage {
     width: 50%; 
     max-width: 500px;
@@ -55,29 +58,26 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    border-radius: 20px; 
+    border-radius: 30%; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
-  
-  }
+}
 
-@keyframes floating{
+@keyframes floating {
     0% {
-        transform: translate(0,0px);
+        transform: translate(0, 0px);
     }
-    50%{
+    50% {
         transform: translate(0, 10px);
     }
-
-    100%{
-        transform: translate(0,-0px);
+    100% {
+        transform: translate(0, -0px);
     }
-
 }
-.topblur{
+
+.topblur {
     position: absolute;
     width: 50vw;
     height: 50vw;
-    min-width: 350px;
     min-width: 350px;
     top: -128px;
     left: -10vw;
@@ -86,12 +86,12 @@
     filter: blur(100px);
     z-index: 0;
 }
-.bottomblur{
+
+.bottomblur {
     position: absolute;
     width: 50vw;
     height: 50vw;
     min-width: 350px;
-    min-width: 250px;
     top: 246px;
     right: -25vw;
     border-radius: 764px;
@@ -100,17 +100,15 @@
     z-index: 0;
 }
 
-@media screen and (max-width:830px){
-    .container{
+@media screen and (max-width: 830px) {
+    .container {
         flex-direction: column-reverse;
-
     }
-    .content{
+    .content {
         align-items: center;
     }
     .heroImage {
         width: 70%;
         margin-bottom: 20px; 
-      }
-    
+    }
 }

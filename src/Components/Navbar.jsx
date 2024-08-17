@@ -3,35 +3,13 @@ import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dateTime, setDateTime] = useState("");
-
-  useEffect(() => {
-    const updateDateTime = () => {
-      const now = new Date();
-      const formattedDateTime = now.toLocaleString("en-US", {
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-      });
-      setDateTime(formattedDateTime);
-    };
-
-    updateDateTime(); 
-    const intervalId = setInterval(updateDateTime, 1000); 
-
-    return () => clearInterval(intervalId); 
-  }, []);
 
   return (
     <nav className={styles.navbar}>
       <a className={styles.title} href="/">
         Farzan.
       </a>
-      <span className={styles.dateTime}>{dateTime}</span>
+
       <div className={styles.menu}>
         <img
           className={styles.menuBtn}

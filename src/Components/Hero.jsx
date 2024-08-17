@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h1 className={styles.title}>Hi, I am Farzan Khan</h1>
+        <h2 className={styles.title}>Hi, I am Farzan Khan</h2>
         <p className={styles.description}>
           Full Stack Developer with expertise in crafting responsive web
           applications, seamlessly integrating front-end and back-end
@@ -28,7 +28,7 @@ const Hero = () => {
         </a>
       </div>
       <img
-        src="/assests/hero/profilepicture1.png"
+        src="/assests/hero/farzanpicture.png"
         alt="Profile picture of Farzan Khan"
         className={styles.heroImage}
         loading="lazy"
