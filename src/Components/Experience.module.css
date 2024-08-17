@@ -5,7 +5,10 @@
     margin-top: 79px;
     margin-left: 10%;
     margin-right: 10%;
+    
   }
+
+ 
   
   .title {
     color: var(--color-text);
@@ -44,6 +47,11 @@
     justify-content: center;
     width: 120px;
     height: 120px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; /* Smoother animation with easing */
+  }
+  .skillImageContainer:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0)
   }
   
   .skillImageContainer img {
@@ -72,6 +80,10 @@
     background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
     border-radius: 10px;
     padding: 24px;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; 
+  }
+  .historyItem:hover {
+    transform: scale(1.1);
   }
   
   .historyItem img {
@@ -116,14 +128,14 @@
     border-radius: 8px;
     cursor: pointer;
     width: 100%;
-    transition: background-color 0.3s ease, color 0.3s ease;
+ 
     background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out; 
     
   }
   
   .Downloadbtn:hover {
-    background-color: var(--color-text);
-    color: var(--color-secondary);
+    transform: scale(1.1);
   }
   
   .Downloadbtn:focus {

@@ -13,7 +13,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const MapComponent = () => {
-  const [position, setPosition] = useState([12.9716, 77.5946]);
+  const [position, setPosition] = useState([13.0294926, 77.6251392]);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {

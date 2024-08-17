@@ -1,20 +1,20 @@
 [
   {
     "title": "Dowry Calculator",
-    "imgSrc": "/assests/projects/project.png",
-    "description": "Projects Can Predicts your maximum limit to get Dowry based on your Input Provided ",
+    "imgSrc": "/assests/projects/projectpicture.png",
+    "description": "Project Can Predicts your maximum limit to get Dowry based on your Input Provided ",
     "technology": ["React","JavaScript"],
     "githubLink": "https://github.com/khanfarzan17/25-Dowray-Calculator",
     "liveLink": "https://zingy-souffle-1a53bd.netlify.app/"
   },
 
   {
-    "title": "Project B",
-    "imgSrc": "/assests/projects/project.png",
-    "description": "This is a project B",
-    "technology": ["React", "Redux", "Tailwind","JSX"],
-    "githubLink": "http://www.example.com",
-    "liveLink": "http://www.example.com"
+    "title": "Food App ",
+    "imgSrc": "/assests/projects/projectpicture1.png",
+    "description": "A Food App where you can Search Food According to category and Add Cart",
+    "technology": [ "Redux-Toolkit", "Tailwind"],
+    "githubLink": "https://github.com/khanfarzan17/20-Food-App-Using-Redux-toolKit",
+    "liveLink": "https://oota.netlify.app/"
   },
 
   {
