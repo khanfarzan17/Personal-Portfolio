@@ -24,5 +24,13 @@
     "githubLink":"https://github.com/khanfarzan17/32-EMI-Calculator",
     "liveLink":"https://master--emiwhiz.netlify.app/"
 
+  },
+  {
+    "title":"profilescout",
+    "imgSrc":"/assests/projects/profilescout.png",
+    "description":"Project to search for profiles",
+    "technology":["React JS "],
+    "githubLink":"https://github.com/khanfarzan17/11-Github-Profile-Finder",
+    "liveLink":"https://master--profilescout.netlify.app/"
   }
 ]
