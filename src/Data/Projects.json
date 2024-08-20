@@ -15,5 +15,14 @@
     "technology": [ "Redux-Toolkit", "Tailwind"],
     "githubLink": "https://github.com/khanfarzan17/20-Food-App-Using-Redux-toolKit",
     "liveLink": "https://oota.netlify.app/"
+  },
+  {
+    "title":"EMIWhiz",
+    "imgSrc":"/assests/projects/EMI.png",
+    "description":"Project to calculate EMI",
+    "technology":["React JS "],
+    "githubLink":"https://github.com/khanfarzan17/32-EMI-Calculator",
+    "liveLink":"https://master--emiwhiz.netlify.app/"
+
   }
 ]
