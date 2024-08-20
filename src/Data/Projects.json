@@ -27,7 +27,7 @@
   },
   {
     "title":"profilescout",
-    "imgSrc":"/assests/projects/PROFILE-FINDER/png",
+    "imgSrc":"/assests/projects/profilefinder.png",
     "description":"Project to search for profiles",
     "technology":["React JS "],
     "githubLink":"https://github.com/khanfarzan17/11-Github-Profile-Finder",
