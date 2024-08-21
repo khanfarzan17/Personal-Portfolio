@@ -10,6 +10,7 @@ const Contact = () => {
         <p>Feel free to reach out!</p>
         <MapComponent className={styles.map} />
       </div>
+
       <ul className={styles.links}>
         <li className={styles.link}>
           <a href="mailto:khanfarzan200@gmail.com">
