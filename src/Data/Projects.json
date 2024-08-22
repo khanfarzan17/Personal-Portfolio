@@ -32,5 +32,14 @@
     "technology":["React JS "],
     "githubLink":"https://github.com/khanfarzan17/11-Github-Profile-Finder",
     "liveLink":"https://master--profilescout.netlify.app/"
+  },
+  {
+    "title": "CSPM DashBoard",
+    "imgSrc": "/assests/projects/CSPM.png",
+    "description": "DashBoard to Perform CRUD operation on Widgets ",
+    "technology": ["React JS","JavaScript"],
+    "githubLink": "https://github.com/khanfarzan17/Accuknox-India-Assignment/tree/master",
+    "liveLink": "https://master--accuknox-dashboard-csmp.netlify.app/"
+
   }
 ]
