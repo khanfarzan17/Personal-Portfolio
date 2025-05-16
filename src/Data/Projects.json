@@ -41,5 +41,13 @@
     "githubLink": "https://github.com/khanfarzan17/Accuknox-India-Assignment/tree/master",
     "liveLink": "https://master--accuknox-dashboard-csmp.netlify.app/"
 
+  },
+  {
+    "title":"Weather App",
+    "imgSrc":"/assests/projects/Weather.png",
+    "description":"Project to Search weather of the Cities and States Globally 24/7",
+    "technology":["React JS","JavaScript"],
+    "githubLink":"https://github.com/khanfarzan17/15-Weather-App",
+    "liveLink":"https://master--globalweathernow.netlify.app/"
   }
 ]

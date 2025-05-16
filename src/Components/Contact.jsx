@@ -8,6 +8,9 @@ const Contact = () => {
       <div className={styles.text}>
         <h2>Contact</h2>
         <p>Feel free to reach out!</p>
+        <small className={styles.address}>
+          1st Stage 3rd Block HBR Layout Bengaluru 560043
+        </small>
         <MapComponent className={styles.map} />
       </div>
 
