@@ -20,6 +20,12 @@ const Contact = () => {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "NOT FOUND"
     );
 
+    console.log("Netlify Env:", {
+      service: import.meta.env.VITE_EMAILJS_SERVICE_ID || "missing",
+      template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "missing",
+      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY ? "exists" : "missing",
+    });
+
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
 
