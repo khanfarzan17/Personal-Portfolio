@@ -5,27 +5,6 @@ import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   useEffect(() => {
-    // Debug environment variables on component mount
-    console.log("VITE ENV VARIABLES:");
-    console.log(
-      "Service ID:",
-      import.meta.env.VITE_EMAILJS_SERVICE_ID || "NOT FOUND"
-    );
-    console.log(
-      "Template ID:",
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "NOT FOUND"
-    );
-    console.log(
-      "Public Key:",
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "NOT FOUND"
-    );
-
-    console.log("Netlify Env:", {
-      service: import.meta.env.VITE_EMAILJS_SERVICE_ID || "missing",
-      template: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "missing",
-      publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY ? "exists" : "missing",
-    });
-
     emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
   }, []);
 
