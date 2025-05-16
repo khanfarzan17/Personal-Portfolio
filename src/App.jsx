@@ -1,4 +1,4 @@
-import React from "react";
+import React, from "react";
 import styles from "./App.module.css";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";

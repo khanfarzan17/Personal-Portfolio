@@ -31,6 +31,7 @@ const MapComponent = () => {
       );
     } else {
       console.warn("Geolocation is not supported by this browser.");
+      console.log("Using default location.");
       setLoaded(true);
     }
   }, []);
