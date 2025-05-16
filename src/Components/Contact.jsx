@@ -1,13 +1,101 @@
-import React from "react";
+import { useRef, useState } from "react";
 import styles from "./Contact.module.css";
 import MapComponent from "./MapComponent";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
+  const form = useRef();
+  const [formStatus, setFormStatus] = useState({
+    submitting: false,
+    submitted: false,
+    error: false,
+    message: "",
+  });
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setFormStatus({ ...formStatus, submitting: true });
+
+    // Replace with your actual EmailJS credentials
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setFormStatus({
+            submitting: false,
+            submitted: true,
+            error: false,
+            message: "Message sent successfully! I'll get back to you soon.",
+          });
+          form.current.reset();
+        },
+        (error) => {
+          setFormStatus({
+            submitting: false,
+            submitted: false,
+            error: true,
+            message: "Failed to send message. Please try again.",
+          });
+          console.error(error);
+        }
+      );
+  };
+
   return (
     <footer id="contact" className={styles.container}>
       <div className={styles.text}>
         <h2>Contact</h2>
         <p>Feel free to reach out!</p>
+
+        {/* Contact Form */}
+        <form ref={form} onSubmit={sendEmail} className={styles.contactForm}>
+          <div className={styles.formGroup}>
+            <input
+              type="text"
+              name="user_name"
+              placeholder="Your Name"
+              required
+              className={styles.formInput}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <input
+              type="email"
+              name="user_email"
+              placeholder="Your Email"
+              required
+              className={styles.formInput}
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+              className={styles.formTextarea}
+            />
+          </div>
+          <button
+            type="submit"
+            className={styles.submitButton}
+            disabled={formStatus.submitting}
+          >
+            {formStatus.submitting ? "Sending..." : "Send Message"}
+          </button>
+
+          {formStatus.submitted && (
+            <div className={styles.successMessage}>{formStatus.message}</div>
+          )}
+          {formStatus.error && (
+            <div className={styles.errorMessage}>{formStatus.message}</div>
+          )}
+        </form>
+
         <small className={styles.address}>
           1st Stage 3rd Block HBR Layout Bengaluru 560043
         </small>

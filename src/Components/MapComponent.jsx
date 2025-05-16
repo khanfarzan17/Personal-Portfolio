@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
@@ -13,32 +13,11 @@ L.Icon.Default.mergeOptions({
 });
 
 const MapComponent = () => {
-  const [position, setPosition] = useState([13.0294926, 77.6251392]);
-  const [loaded, setLoaded] = useState(false);
+  // Fixed location coordinates - you can change these to your desired location
+  const position = [13.025673286873252, 77.62791881670542]; // Bangalore coordinates
 
-  useEffect(() => {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (location) => {
-          const { latitude, longitude } = location.coords;
-          setPosition([latitude, longitude]);
-          setLoaded(true);
-        },
-        (error) => {
-          console.error("Error fetching location:", error);
-          setLoaded(true);
-        }
-      );
-    } else {
-      console.warn("Geolocation is not supported by this browser.");
-      console.log("Using default location.");
-      setLoaded(true);
-    }
-  }, []);
-
-  if (!loaded) {
-    return <p>Loading map...</p>;
-  }
+  // Google Maps URL with coordinates
+  const googleMapsUrl = `https://www.google.com/maps?q=${position[0]},${position[1]}`;
 
   return (
     <MapContainer
@@ -49,7 +28,7 @@ const MapComponent = () => {
         width: "100%",
         marginTop: "50px",
         borderRadius: "8px",
-        border: "2px  solid",
+        border: "2px solid",
       }}
     >
       <TileLayer
@@ -57,7 +36,31 @@ const MapComponent = () => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
       <Marker position={position}>
-        <Popup>Your current location</Popup>
+        <Popup>
+          My location <br />
+          <a
+            href={googleMapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: "#1a73e8", // A refined Google-style blue
+              textDecoration: "none",
+              fontWeight: "500",
+              fontSize: "14px",
+              borderBottom: "2px solid transparent",
+              transition: "all 0.3s ease",
+              cursor: "pointer",
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.borderBottom = "2px solid #1a73e8";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.borderBottom = "2px solid transparent";
+            }}
+          >
+            View on Google Maps
+          </a>
+        </Popup>
       </Marker>
     </MapContainer>
   );

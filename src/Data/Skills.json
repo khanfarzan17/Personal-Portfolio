@@ -29,10 +29,6 @@
     "imgesrc": "assests/skills/EXPRESS.png"
   },
   {
-    "title": "Mongo DB",
-    "imgesrc": "assests/skills/mongodb.png"
-  },
-  {
     "title": "My SQL",
     "imgesrc": "assests/skills/MYSQL.png"
   },
@@ -46,16 +42,8 @@
     "imgesrc": "assests/skills/TYPESCRIPT.png"
   },
   {
-    "title": "Git",
-    "imgesrc": "assests/skills/GIT.png"
-  },
-  {
     "title": "GitHub",
     "imgesrc": "assests/skills/GITHUB.png"
-  },
-  {
-    "title": "Jest",
-    "imgesrc": "assests/skills/JEST.png"
   },
   {
     "title": "TailWind",
@@ -71,15 +59,15 @@
     "imgesrc": "assests/skills/CHATGPT.png"
   },
   {
-    "title": "ASP DotNet ",
-    "imgesrc": "assests/skills/ASPDOTNET.png"
-  },
-  {
     "title": "MUI",
     "imgesrc": "assests/skills/MUI.png"
   },
   {
     "title": "C#",
     "imgesrc": "assests/skills/CSHARP.png"
+  },
+  {
+    "title":"Ennovia",
+    "imgesrc":"assests/skills/ENNOVIA.png"
   }
 ]
