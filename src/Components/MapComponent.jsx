@@ -24,7 +24,7 @@ const MapComponent = () => {
       center={position}
       zoom={13}
       style={{
-        height: "400px",
+        height: "382px",
         width: "100%",
         marginTop: "50px",
         borderRadius: "8px",

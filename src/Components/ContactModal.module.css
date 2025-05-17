@@ -1,190 +1,3 @@
-@import "../vars.css";
-
-.modernContainer {
-  color: var(--color-text);
-  margin-top: 120px;
-  background-color: var(--color-secondary);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 80px 5%;
-  width: 100vw;
-}
-
-.contactHeader {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.contactHeader h2 {
-  font-size: 60px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  background: linear-gradient(90deg, var(--color-primary), #6e8efb);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.contactHeader p {
-  font-size: 24px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* Social Section */
-.socialSection {
-  width: 100%;
-  max-width: 800px;
-  margin-bottom: 60px;
-}
-
-.socialRow {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.socialCircle {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.socialCircle img {
-  width: 30px;
-  height: 30px;
-  transition: transform 0.3s ease;
-}
-
-.socialCircle:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.15),
-    rgba(255, 255, 255, 0.05)
-  );
-}
-
-.socialCircle:hover img {
-  transform: scale(1.2);
-}
-
-.socialTooltip {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 4px;
-  font-size: 14px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.socialCircle:hover .socialTooltip {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Map Section */
-.mapSection {
-  width: 100%;
-  max-width: 1000px;
-}
-
-.mapWrapper {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  height: 510px;
-  /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); */
-}
-
-.mapWrapper .map {
-  width: 100%;
-  height: 100%;
-}
-
-.mapOverlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-}
-
-.addressSection {
-  display: flex;
-  align-items: center;
-  max-width: 60%;
-}
-
-.address {
-  color: white;
-  font-size: 16px;
-  /* padding: 12px 20px; */
-  /* border-radius: 10px;
-  background: rgba(0, 0, 0, 0.6); */
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-}
-
-.locationIcon {
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-  fill: var(--color-primary);
-}
-
-.contactBtn {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: linear-gradient(90deg, var(--color-primary), #6e8efb);
-  border: none;
-  border-radius: 12px;
-  padding: 14px 28px;
-  color: white;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.contactBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(var(--color-primary-rgb), 0.4);
-}
-
-.btnText {
-  display: inline-block;
-}
-
-.btnIcon {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
-}
-
 /* Modern Contact Modal */
 .contactModal {
   max-width: 650px;
@@ -225,7 +38,7 @@
 .modalTitle {
   font-weight: 700;
   font-size: 24px;
-  color: var(--color-text);
+  color: var(--color-text) !important;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -511,71 +324,22 @@
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-  .contactHeader h2 {
-    font-size: 40px;
-  }
-
-  .contactHeader p {
-    font-size: 18px;
-  }
-
-  .socialRow {
-    gap: 20px;
-  }
-
-  .socialCircle {
-    width: 60px;
-    height: 60px;
-  }
-
-  .mapWrapper {
-    height: 400px;
-  }
-
-  .mapOverlay {
+  .formRow {
     flex-direction: column;
-    gap: 15px;
-    padding: 15px;
+    gap: 0;
   }
 
-  .addressSection {
-    max-width: 100%;
+  .modalHeader,
+  .modalFooter {
+    padding: 20px;
   }
 
-  .contactBtn {
-    width: 100%;
-    justify-content: center;
+  .modalBody {
+    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
-  .contactHeader h2 {
-    font-size: 32px;
-  }
-
-  .socialRow {
-    gap: 15px;
-  }
-
-  .socialCircle {
-    width: 50px;
-    height: 50px;
-  }
-
-  .socialCircle img {
-    width: 22px;
-    height: 22px;
-  }
-
-  .mapWrapper {
-    height: 300px;
-  }
-
-  .address {
-    font-size: 14px;
-    padding: 10px;
-  }
-
   .modalHeader,
   .modalFooter {
     padding: 16px;
