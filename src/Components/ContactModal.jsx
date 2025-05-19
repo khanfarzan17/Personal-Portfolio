@@ -13,7 +13,7 @@ const ContactModal = ({
   filteredQuickMessages,
   selectQuickMessage,
   sendEmail,
-  formStatus,
+  formStatus, 
 }) => {
   return (
     <Modal

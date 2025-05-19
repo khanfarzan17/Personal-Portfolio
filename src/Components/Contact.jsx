@@ -152,7 +152,7 @@ const Contact = () => {
       {/* Map Section with Contact Button */}
       <div className={styles.mapSection}>
         <div className={styles.mapWrapper}>
-          <MapComponent className={styles.map} />
+          {/* <MapComponent className={styles.map} /> */}
           <div className={styles.mapOverlay}>
             <div className={styles.addressSection}>
               <div className={styles.address}>
