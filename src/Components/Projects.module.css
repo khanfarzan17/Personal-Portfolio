@@ -1,28 +1,73 @@
 @import "../vars.css";
 
+/* ─── Container ─────────────────────────────────────────────── */
 
 .container {
-  margin-top: 76px;
+  margin-top: 120px;
   color: var(--color-text);
   margin-left: 10%;
   margin-right: 10%;
-  
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Section header ────────────────────────────────────────── */
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.sectionTag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-primary);
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .title {
-  font-size: 35px;
-  font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  font-family: "Syne", var(--font-roboto), sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  text-transform: none;
+  white-space: nowrap;
 }
 
+.titleLine {
+  flex: 1;
+  height: 0.5px;
+  background: rgba(var(--color-text-rgb), 0.07);
+}
+
+/* ─── Grid ──────────────────────────────────────────────────── */
+
 .projects {
-  margin-top: 37px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   width: 100%;
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+
+@media screen and (max-width: 830px) {
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 80px;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeader {
+    margin-bottom: 32px;
+  }
 }

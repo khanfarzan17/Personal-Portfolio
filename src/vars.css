@@ -1,11 +1,21 @@
-:root{
-    --color-text:#fff;
-    --color-primary:#576cbc;
-    --color-secondary:#19376d;
-    --color-dark:#0b2447;
-    --color-bg:#04152d;
+:root {
+  --color-text: #f9fafb;
+  --color-text-rgb: 249, 250, 251;
 
-    /* fonts*/
-    --font-robot:"Roboto"
+  --color-primary: #6ee7b7;
+  --color-primary-rgb: 110, 231, 183;
+  --color-accent-1: #60a5fa;
+  --color-accent-2: #a78bfa;
+  --color-muted: #9ca3af;
+  --color-secondary: #111827;
+  --color-dark: #0a0e1a;
+  --color-bg: #0d1117;
 
+  --color-border: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.08);
+  --dim: rgba(255, 255, 255, 0.65);
+  --text2: rgba(255, 255, 255, 0.92);
+
+  --font-heading: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
 }

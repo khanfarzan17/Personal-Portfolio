@@ -1,9 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import styles from "./Contact.module.css";
-import MapComponent from "./MapComponent";
 import emailjs from "@emailjs/browser";
-
-import ContactModal from "./ContactModal";
 
 const Contact = () => {
   useEffect(() => {
@@ -20,10 +17,6 @@ const Contact = () => {
 
   const [isMessageFocused, setIsMessageFocused] = useState(false);
   const [typedMessage, setTypedMessage] = useState("");
-  const [showModal, setShowModal] = useState(false);
-
-  const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
 
   const quickMessages = [
     "I'm looking for a React developer for a modern web project.",
@@ -35,7 +28,7 @@ const Contact = () => {
 
   // Filter quick messages based on typedMessage
   const filteredQuickMessages = quickMessages.filter((msg) =>
-    msg.toLowerCase().includes(typedMessage.toLowerCase())
+    msg.toLowerCase().includes(typedMessage.toLowerCase()),
   );
 
   const selectQuickMessage = (message) => {
@@ -56,7 +49,7 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         form.current,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(
         () => {
@@ -70,9 +63,7 @@ const Contact = () => {
           setIsMessageFocused(false);
           setTypedMessage("");
 
-          // Close modal after successful submission
           setTimeout(() => {
-            handleClose();
             setFormStatus({
               submitting: false,
               submitted: false,
@@ -89,103 +80,195 @@ const Contact = () => {
             message: "Failed to send message. Please try again.",
           });
           console.error(error);
-        }
+        },
       );
   };
 
   return (
     <footer id="contact" className={styles.modernContainer}>
-      {/* Social Links Row */}
-      <div className={styles.socialSection}>
-        <div className={styles.contactHeader}>
-          <h2>Contact</h2>
-          <p>Feel free to reach out!</p>
-        </div>
-        <div className={styles.socialRow}>
-          <a
-            href="mailto:khanfarzan200@gmail.com"
-            className={styles.socialCircle}
-            aria-label="Email"
-          >
-            <img src="/assests/contact/GMAIL.png" alt="Email" />
-            <span className={styles.socialTooltip}>Email</span>
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/farzan-ateeque-khan-6a9669236/"
-            className={styles.socialCircle}
-            aria-label="LinkedIn"
-          >
-            <img src="/assests/contact/LINKEDIN.png" alt="LinkedIn" />
-            <span className={styles.socialTooltip}>LinkedIn</span>
-          </a>
-
-          <a
-            href="https://x.com/farzankhan_17"
-            className={styles.socialCircle}
-            aria-label="Twitter"
-          >
-            <img src="/assests/contact/TWITTER.png" alt="Twitter" />
-            <span className={styles.socialTooltip}>Twitter</span>
-          </a>
-
-          <a
-            href="https://www.instagram.com/farzan.khan17/"
-            className={styles.socialCircle}
-            aria-label="Instagram"
-          >
-            <img src="/assests/contact/INSTAGRAM.png" alt="Instagram" />
-            <span className={styles.socialTooltip}>Instagram</span>
-          </a>
-
-          <a
-            href="https://github.com/khanfarzan17"
-            className={styles.socialCircle}
-            aria-label="GitHub"
-          >
-            <img src="/assests/contact/GITHUB.png" alt="GitHub" />
-            <span className={styles.socialTooltip}>GitHub</span>
-          </a>
-        </div>
+      <div className={styles.contactHeader}>
+        <h2>Let's Connect</h2>
+        <p>
+          Ready to bring your next web project to life? Send a message and I’ll
+          respond fast.
+        </p>
       </div>
+      <div className={styles.contactWrap}>
+        <div className={styles.contactLeft}>
+          <p className={styles.contactIntro}>
+            Let’s build something great together. Share your idea, and I’ll get
+            back to you soon.
+          </p>
+          <form ref={form} onSubmit={sendEmail} className={styles.cf}>
+            <div className={styles.fieldRow}>
+              <input
+                type="text"
+                name="user_name"
+                placeholder="Your Name"
+                required
+                className={styles.field}
+              />
+              <input
+                type="email"
+                name="user_email"
+                placeholder="Your Email"
+                required
+                className={styles.field}
+              />
+            </div>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="How can I help you?"
+              required
+              className={styles.textarea}
+              value={typedMessage}
+              onChange={(e) => setTypedMessage(e.target.value)}
+              onFocus={() => setIsMessageFocused(true)}
+              onBlur={() => {
+                setTimeout(() => {
+                  const activeElement = document.activeElement;
+                  const isQuickMessageBtn = activeElement?.closest(
+                    `.${styles.quickMessageBtn}`,
+                  );
+                  if (!isQuickMessageBtn) {
+                    setIsMessageFocused(false);
+                  }
+                }, 100);
+              }}
+            />
 
-      {/* Map Section with Contact Button */}
-      <div className={styles.mapSection}>
-        <div className={styles.mapWrapper}>
-          {/* <MapComponent className={styles.map} /> */}
-          <div className={styles.mapOverlay}>
-            <div className={styles.addressSection}>
-              <div className={styles.address}>
-                <svg className={styles.locationIcon} viewBox="0 0 24 24">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            {isMessageFocused && (
+              <div className={styles.quickMessages}>
+                <p className={styles.quickMessagesTitle}>
+                  <span className={styles.quickIcon}>💡</span>
+                  Quick Messages
+                </p>
+                <div className={styles.quickMessageOptions}>
+                  {filteredQuickMessages.length ? (
+                    filteredQuickMessages.map((msg, index) => (
+                      <button
+                        key={index}
+                        type="button"
+                        className={styles.quickMessageBtn}
+                        onClick={() => selectQuickMessage(msg)}
+                        onMouseDown={(e) => e.preventDefault()}
+                      >
+                        {msg}
+                      </button>
+                    ))
+                  ) : (
+                    <p className={styles.noQuickMessages}>No matches found.</p>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {formStatus.submitted && (
+              <div className={styles.successMessage}>
+                <svg className={styles.statusIcon} viewBox="0 0 24 24">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                 </svg>
-                1st Stage 3rd Block HBR Layout Bengaluru 560043
+                {formStatus.message}
+              </div>
+            )}
+
+            {formStatus.error && (
+              <div className={styles.errorMessage}>
+                <svg className={styles.statusIcon} viewBox="0 0 24 24">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
+                </svg>
+                {formStatus.message}
+              </div>
+            )}
+
+            <button
+              className={styles.contactBtn}
+              type="submit"
+              disabled={formStatus.submitting}
+            >
+              <span className={styles.btnText}>Send Message</span>
+            </button>
+          </form>
+        </div>
+
+        <div className={styles.contactRight}>
+          <div className={styles.cinfoRow}>
+            <div className={styles.cinfoIc}>📍</div>
+            <div>
+              <div className={styles.cinfoLabel}>Location</div>
+              <div className={styles.cinfoVal}>Bengaluru, India</div>
+            </div>
+          </div>
+
+          <div className={styles.cinfoRow}>
+            <div className={styles.cinfoIc}>
+              <img
+                src="/assests/contact/GMAIL.png"
+                alt="Email Icon"
+                className={styles.iconImg}
+              />
+            </div>
+            <div>
+              <div className={styles.cinfoLabel}>Email</div>
+              <div className={styles.cinfoVal}>
+                <a
+                  href="https://www.linkedin.com/in/farzan-ateeque-khan-6a9669236/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  farzan-ateeque-khan
+                </a>
               </div>
             </div>
-            <button className={styles.contactBtn} onClick={handleShow}>
-              <span className={styles.btnText}>Send Message</span>
-              <svg className={styles.btnIcon} viewBox="0 0 24 24">
-                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z" />
-              </svg>
-            </button>
+          </div>
+
+          <div className={styles.cinfoRow}>
+            <div className={styles.cinfoIc}>
+              <img
+                src="/assests/contact/LINKEDIN.png"
+                alt="LinkedIn Icon"
+                className={styles.iconImg}
+              />
+            </div>
+
+            <div>
+              <div className={styles.cinfoLabel}>LinkedIn</div>
+              <div className={styles.cinfoVal}>
+                <a
+                  href="https://www.linkedin.com/in/farzan-ateeque-khan-6a9669236/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  farzan-ateeque-khan
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.cinfoRow}>
+            <div className={styles.cinfoIc}>
+              <img
+                src="/assests/contact/GITHUB.png"
+                alt="Github Icon"
+                className={styles.iconImg}
+              />
+            </div>
+            <div>
+              <div className={styles.cinfoLabel}>Github</div>
+              <div className={styles.cinfoVal}>
+                <a
+                  href="https://github.com/khanfarzan17"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  github.com/khanfarzan17
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Contact Form Modal */}
-      <ContactModal
-        showModal={showModal}
-        handleClose={handleClose}
-        form={form}
-        typedMessage={typedMessage}
-        setTypedMessage={setTypedMessage}
-        isMessageFocused={isMessageFocused}
-        setIsMessageFocused={setIsMessageFocused}
-        filteredQuickMessages={filteredQuickMessages}
-        selectQuickMessage={selectQuickMessage}
-        sendEmail={sendEmail}
-        formStatus={formStatus}
-      />
     </footer>
   );
 };

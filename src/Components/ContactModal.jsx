@@ -13,7 +13,7 @@ const ContactModal = ({
   filteredQuickMessages,
   selectQuickMessage,
   sendEmail,
-  formStatus, 
+  formStatus,
 }) => {
   return (
     <Modal
@@ -95,7 +95,7 @@ const ContactModal = ({
                   setTimeout(() => {
                     const activeElement = document.activeElement;
                     const isQuickMessageBtn = activeElement.closest(
-                      `.${styles.quickMessageBtn}`
+                      `.${styles.quickMessageBtn}`,
                     );
                     if (!isQuickMessageBtn) {
                       setIsMessageFocused(false);

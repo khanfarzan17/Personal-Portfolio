@@ -1,135 +1,483 @@
+@import "../vars.css";
+
+/* ─── Hero Section ─────────────────────────────────────────── */
+
 .container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 49px;
-    z-index: 1;
-    margin-left: 10%;
-    margin-right: 10%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 60px;
+  margin-left: 10%;
+  margin-right: 10%;
+  min-height: 85vh;
+  overflow: hidden;
+  z-index: 1;
+  padding: 40px 0;
+  border-radius: 20px;
+  background: rgba(var(--color-text-rgb), 0.02);
 }
+
+/* ─── Background blurs ──────────────────────────────────────── */
+
+.topBlur {
+  position: absolute;
+  width: 55vw;
+  height: 55vw;
+  min-width: 380px;
+  top: -160px;
+  left: -12vw;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  filter: blur(110px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bottomBlur {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  min-width: 350px;
+  bottom: -80px;
+  right: -20vw;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  filter: blur(110px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.accentBlur {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: 30%;
+  left: 35%;
+  border-radius: 50%;
+  background: rgba(var(--color-primary-rgb), 0.04);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ─── Left content ──────────────────────────────────────────── */
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: var(--color-text);
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  max-width: 520px;
+  gap: 0;
 }
+
+/* ─── Availability badge ────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--color-primary);
+  border: 0.5px solid rgba(var(--color-primary-rgb), 0.28);
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 22px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: rgba(var(--color-primary-rgb), 0.05);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
+
+/* ─── Title ─────────────────────────────────────────────────── */
 
 .title {
-    font-size: 72px;
-    font-weight: 900;
-    margin-bottom: 33px;
-    font-family: var(--font-roboto);
-    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0) 120%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-   
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -2px;
+  margin-bottom: 0;
+  color: var(--color-text);
+  font-family: "Syne", var(--font-roboto), sans-serif;
 }
 
+.titleAccent {
+  background: linear-gradient(
+    100deg,
+    var(--color-primary) 0%,
+    var(--color-accent-1) 60%,
+    var(--color-accent-2) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Role line ─────────────────────────────────────────────── */
+
+.role {
+  font-size: 14px;
+  color: var(--color-muted);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  margin-top: 14px;
+  margin-bottom: 18px;
+}
+
+/* ─── Description ───────────────────────────────────────────── */
+
 .description {
-    font-size: 30px;
-    font-family: var(--font-roboto);
-    margin-bottom: 52px;
+  font-size: 15px;
+  color: var(--color-muted);
+  line-height: 1.75;
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+
+/* ─── Button row ────────────────────────────────────────────── */
+
+.btnRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
 }
 
 .contactBtn {
-    text-decoration: none;
-    background-color: var(--color-primary);
-    color: var(--color-text);
-    border-radius: 10px;
-    font-size: 30px;
-    font-weight: 600;
-    padding: 17px 26px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: var(--color-primary);
+  color: var(--color-dark);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 24px;
+  letter-spacing: 0.02em;
+  font-family: "Syne", var(--font-roboto), sans-serif;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 0 0 0 rgba(var(--color-primary-rgb), 0);
 }
 
 .contactBtn:hover {
-    background-color: var(--color-text);
-    color: var(--color-secondary);
+  background: rgba(var(--color-primary-rgb), 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.2);
 }
 
+.contactBtn:active {
+  transform: translateY(0);
+}
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  text-decoration: none;
+  border: 0.5px solid rgba(255, 255, 255, 0.14);
+  color: #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 12px 22px;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.secondaryBtn:hover {
+  border-color: rgba(var(--color-primary-rgb), 0.4);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* ─── Social icons ──────────────────────────────────────────── */
+
+.socialRow {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  border: 0.5px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-muted);
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.socialIcon:hover {
+  border-color: rgba(var(--color-primary-rgb), 0.35);
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.07);
+  transform: translateY(-2px);
+}
+
+/* ─── Stats row ─────────────────────────────────────────────── */
+
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 20px;
+  background: rgba(var(--color-text-rgb), 0.03);
+  border: 0.5px solid var(--color-border);
+  border-radius: 12px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statNum {
+  font-family: "Syne", var(--font-roboto), sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.statAccent {
+  color: var(--color-primary);
+}
+
+.statLabel {
+  font-size: 10px;
+  color: #4b5563;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.statDivider {
+  width: 0.5px;
+  height: 32px;
+  background: var(--color-border);
+}
+
+/* ─── Image side ────────────────────────────────────────────── */
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  width: 280px;
+  height: 360px;
+}
+
+/* Main Frame */
+.avatarFrame {
+  width: 220px;
+  height: 300px;
+  border-radius: 120px 120px 0 0;
+
+  background: rgba(110, 231, 183, 0.04);
+  border: 1px solid rgba(110, 231, 183, 0.12);
+
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Actual Image */
 .heroImage {
-    width: 50%;
-    max-width: 500px;
-    z-index: 1;
-    animation-name: floating;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-    border-radius: 30%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    border: 5px solid;
-    animation: floating 3s infinite ease-in-out, borderAnimation 5s linear infinite;
-  }
-  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 
-@keyframes borderAnimation {
-    0% {
-      border: 5px solid  rgba(255, 255, 255, 0) 0%,
-      
-    }
-   
-    50% {
-       border: 5px solid rgba(102, 102, 102, 0.75);
-        
-    }
-   
-    100% {
-      border: 5px solid rgba(255, 255, 255, 0) 100%
-    }
-  }
-  
+  border-radius: 120px 120px 0 0;
 
-
-@keyframes floating {
-    0% {
-        transform: translate(0, 0px);
-    }
-    50% {
-        transform: translate(0, 10px);
-    }
-    100% {
-        transform: translate(0, -0px);
-    }
+  animation: floating 4s ease-in-out infinite;
 }
 
-.topblur {
-    position: absolute;
-    width: 50vw;
-    height: 50vw;
-    min-width: 350px;
-    top: -128px;
-    left: -10vw;
-    border-radius: 764px;
-    background: rgba(25, 25, 109, 0.7);
-    filter: blur(100px);
-    z-index: 0;
+/* Background Glow */
+.imageGlow {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+
+  background: rgba(110, 231, 183, 0.05);
+  filter: blur(80px);
+
+  z-index: -1;
+}
+/* ─── Floating badge ────────────────────────────────────────── */
+
+.floatingBadge {
+  position: absolute;
+  bottom: 24px;
+  right: -20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(var(--color-dark-rgb), 0.92);
+  border: 0.5px solid rgba(var(--color-text-rgb), 0.1);
+  border-radius: 10px;
+  padding: 10px 14px;
+  backdrop-filter: blur(12px);
+  z-index: 2;
+  animation: floatingBadge 3.5s ease-in-out infinite;
 }
 
-.bottomblur {
-    position: absolute;
-    width: 50vw;
-    height: 50vw;
-    min-width: 350px;
-    top: 246px;
-    right: -25vw;
-    border-radius: 764px;
-    background: rgba(25, 25, 109, 0.7);
-    filter: blur(100px);
-    z-index: 0;
+@keyframes floatingBadge {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.badgeEmoji {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.badgeNum {
+  font-family: "Syne", var(--font-roboto), sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.badgeLabel {
+  font-size: 9px;
+  color: var(--color-muted);
+  margin-top: 2px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ─── Responsive ────────────────────────────────────────────── */
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 52px;
+  }
+  .heroImage {
+    width: 320px;
+    max-width: 40vw;
+  }
 }
 
 @media screen and (max-width: 830px) {
-    .container {
-        flex-direction: column-reverse;
-    }
-    .content {
-        align-items: center;
-    }
-    .heroImage {
-        width: 70%;
-        margin-bottom: 20px; 
-    }
+  .container {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 80px;
+    min-height: unset;
+    gap: 40px;
+  }
+
+  .content {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .badge {
+    align-self: center;
+  }
+
+  .title {
+    font-size: 42px;
+    letter-spacing: -1px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .btnRow {
+    justify-content: center;
+  }
+
+  .socialRow {
+    justify-content: center;
+  }
+
+  .statsRow {
+    justify-content: center;
+  }
+
+  .heroImage {
+    width: 260px;
+    max-width: 70vw;
+  }
+
+  .floatingBadge {
+    right: 0;
+    bottom: 10px;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .title {
+    font-size: 34px;
+  }
+  .contactBtn,
+  .secondaryBtn {
+    font-size: 13px;
+    padding: 10px 18px;
+  }
 }
