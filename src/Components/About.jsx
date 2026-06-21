@@ -99,7 +99,6 @@ const About = () => {
                   React.js, Tailwind CSS, and Framer Motion.
                 </p>
               </div>
-              <div className={styles.itemArrow}>→</div>
             </li>
 
             <li className={styles.aboutItem}>
@@ -124,7 +123,6 @@ const About = () => {
                   Express.js, ASP.NET Core, and MySQL.
                 </p>
               </div>
-              <div className={styles.itemArrow}>→</div>
             </li>
 
             <li className={styles.aboutItem}>
@@ -149,7 +147,6 @@ const About = () => {
                   with a sharp eye for detail and consistency.
                 </p>
               </div>
-              <div className={styles.itemArrow}>→</div>
             </li>
           </ul>
         </div>
