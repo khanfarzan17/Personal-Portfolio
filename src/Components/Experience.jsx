@@ -1,51 +1,40 @@
-import React from "react";
-import skills from "../Data/Skills.json";
+import React, { useEffect } from "react";
 import history from "../Data/History.json";
 import styles from "./Experience.module.css";
 import { MdDownload } from "react-icons/md";
 const Experience = () => {
+  useEffect(() => {
+    const items = document.querySelectorAll(`.${styles.historyItem}`);
+    if (!items.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    items.forEach((item) => observer.observe(item));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className={styles.container} id="experience">
       {/* Section header */}
       <div className={styles.sectionHeader}>
-        <span className={styles.sectionTag}>What I know & where I've been</span>
+        <span className={styles.sectionTag}>Work History</span>
         <h2 className={styles.title}>Experience</h2>
         <div className={styles.titleLine}></div>
       </div>
 
       <div className={styles.content}>
-        {/* ── Left: Skills grid ── */}
-        <div className={styles.skillsCol}>
-          <p className={styles.colLabel}>
-            <span className={styles.colLabelDot}></span>
-            Tech Stack
-          </p>
-
-          <div className={styles.skills}>
-            {skills.map((skill, id) => (
-              <div key={id} className={styles.skill}>
-                <div className={styles.skillImageContainer}>
-                  <img src={skill.imgesrc} alt={skill.title} />
-                </div>
-                <p>{skill.title}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Vertical divider */}
-        <div className={styles.divider}></div>
-
-        {/* ── Right: History timeline ── */}
         <div className={styles.historyCol}>
-          <p className={styles.colLabel}>
-            <span
-              className={styles.colLabelDot}
-              style={{ background: "#60A5FA" }}
-            ></span>
-            Work History
-          </p>
-
           <ul className={styles.history}>
             {history.map((historyItem, id) => (
               <li key={id} className={styles.historyItem}>
@@ -119,18 +108,6 @@ const Experience = () => {
               </li>
             ))}
           </ul>
-
-          {/* Download CV */}
-          <a
-            className={styles.link}
-            href="/assests/resume/Farzan_Ateeque_Khan_Experence_Resume.pdf"
-            download="Farzan-khan-Resume.pdf"
-          >
-            <button className={styles.Downloadbtn}>
-              <MdDownload size={18} aria-hidden="true" />
-              Download My CV
-            </button>
-          </a>
         </div>
       </div>
     </section>

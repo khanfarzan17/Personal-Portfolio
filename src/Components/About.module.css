@@ -258,6 +258,39 @@
   letter-spacing: -0.2px;
 }
 
+.strengthsSection {
+  margin-top: 32px;
+}
+
+.strengthsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.strengthCard {
+  padding: 22px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.5px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  min-height: 100px;
+}
+
+.strengthCard h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.strengthCard p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
 .aboutItemText p {
   font-size: 12px;
   color: var(--color-muted);

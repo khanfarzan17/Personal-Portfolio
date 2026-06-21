@@ -47,16 +47,12 @@
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 0.5px 1fr;
-  gap: 0 48px;
-  align-items: start;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 
 .divider {
-  background: rgba(255, 255, 255, 0.07);
-  width: 0.5px;
-  min-height: 400px;
-  align-self: stretch;
+  display: none;
 }
 
 /* ─── Column labels ─────────────────────────────────────────── */
@@ -87,62 +83,34 @@
   padding-right: 8px;
 }
 
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.skillsList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  cursor: default;
-  transition: transform 0.2s ease;
-}
-
-.skill:hover {
-  transform: translateY(-4px);
-}
-
-.skillImageContainer {
-  background: rgba(255, 255, 255, 0.04);
-  border: 0.5px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  display: flex;
+.skillBadge {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  font-size: 12px;
+  color: var(--color-text);
+  min-height: 56px;
+  text-align: center;
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
-    box-shadow 0.25s ease;
+    transform 0.2s ease;
 }
 
-.skill:hover .skillImageContainer {
+.skillBadge:hover {
   border-color: rgba(var(--color-primary-rgb), 0.25);
-  background: rgba(var(--color-primary-rgb), 0.06);
-  box-shadow: 0 0 20px rgba(var(--color-primary-rgb), 0.08);
-}
-
-.skillImageContainer img {
-  width: 38px;
-  height: 38px;
-  object-fit: contain;
-}
-
-.skill p {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--color-muted);
-  text-align: center;
-  transition: color 0.2s ease;
-}
-
-.skill:hover p {
-  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.05);
+  transform: translateY(-2px);
 }
 
 /* ─── History timeline ──────────────────────────────────────── */
@@ -168,6 +136,16 @@
   grid-template-columns: 24px 1fr;
   gap: 0 16px;
   padding-bottom: 8px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.historyItem.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Timeline meta (dot + line) */
@@ -207,9 +185,14 @@
   transition:
     border-color 0.25s ease,
     background 0.25s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
+}
+
+.historyItem.visible .historyCard {
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12);
 }
 
 .historyCard::before {

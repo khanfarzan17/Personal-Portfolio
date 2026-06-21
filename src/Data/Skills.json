@@ -63,11 +63,15 @@
     "imgesrc": "assests/skills/MUI.png"
   },
   {
-    "title": "C#",
-    "imgesrc": "assests/skills/CSHARP.png"
+    "title": "Bootstrap",
+    "imgesrc": "assests/skills/BOOTSTRAP.png"
   },
   {
-    "title":"Ennovia",
-    "imgesrc":"assests/skills/ENNOVIA.png"
+    "title": "MongoDB",
+    "imgesrc": "assests/skills/mongodb.png"
+  },
+  {
+    "title": "TypeScript",
+    "imgesrc": "assests/skills/TYPESCRIPT.png"
   }
 ]

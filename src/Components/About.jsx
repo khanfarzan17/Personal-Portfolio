@@ -39,6 +39,29 @@ const About = () => {
             "I build things for the web — and I care deeply about how they look,
             feel, and perform."
           </blockquote>
+          <div className={styles.strengthsSection}>
+            <span className={styles.sectionTag}>Strengths</span>
+            <div className={styles.strengthsGrid}>
+              <div className={styles.strengthCard}>
+                <h3>Clean Code</h3>
+                <p>
+                  SOLID principles, reusable components, readable architecture.
+                </p>
+              </div>
+              <div className={styles.strengthCard}>
+                <h3>Fast Delivery</h3>
+                <p>Ship MVPs quickly without compromising quality.</p>
+              </div>
+              <div className={styles.strengthCard}>
+                <h3>UI Precision</h3>
+                <p>Pixel-perfect interfaces with a strong design eye.</p>
+              </div>
+              <div className={styles.strengthCard}>
+                <h3>Quick Learner</h3>
+                <p>Adapts fast to new stacks, tools, and domains.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Right — bio + cards */}

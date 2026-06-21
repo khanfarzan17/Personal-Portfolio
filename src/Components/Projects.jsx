@@ -10,7 +10,7 @@ const Projects = () => {
     <section id="projects" className={styles.container}>
       {/* Section header */}
       <div className={styles.sectionHeader}>
-        <span className={styles.sectionTag}>What I've built</span>
+        <span className={styles.sectionTag}>Work Showcase</span>
         <h2 className={styles.title}>Projects</h2>
         <div className={styles.titleLine}></div>
       </div>

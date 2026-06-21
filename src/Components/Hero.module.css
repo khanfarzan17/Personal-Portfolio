@@ -15,8 +15,13 @@
   overflow: hidden;
   z-index: 1;
   padding: 40px 0;
-  border-radius: 20px;
-  background: rgba(var(--color-text-rgb), 0.02);
+  border-radius: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--color-text-rgb), 0.08),
+    rgba(var(--color-text-rgb), 0.02)
+  );
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 /* ─── Background blurs ──────────────────────────────────────── */
@@ -43,8 +48,8 @@
   bottom: -80px;
   right: -20vw;
   border-radius: 50%;
-  background: var(--color-secondary);
-  filter: blur(110px);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  filter: blur(90px);
   z-index: 0;
   pointer-events: none;
 }
@@ -71,6 +76,7 @@
   z-index: 1;
   max-width: 520px;
   gap: 0;
+  padding-left: 16px;
 }
 
 /* ─── Availability badge ────────────────────────────────────── */
@@ -115,9 +121,9 @@
 /* ─── Title ─────────────────────────────────────────────────── */
 
 .title {
-  font-size: 64px;
+  font-size: clamp(3.5rem, 6vw, 6rem);
   font-weight: 800;
-  line-height: 1.06;
+  line-height: 1.02;
   letter-spacing: -2px;
   margin-bottom: 0;
   color: var(--color-text);
@@ -150,11 +156,12 @@
 /* ─── Description ───────────────────────────────────────────── */
 
 .description {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--color-muted);
-  line-height: 1.75;
-  margin-bottom: 32px;
+  line-height: 1.85;
+  margin-bottom: 34px;
   font-weight: 300;
+  max-width: 520px;
 }
 
 /* ─── Button row ────────────────────────────────────────────── */
@@ -188,9 +195,9 @@
 }
 
 .contactBtn:hover {
-  background: rgba(var(--color-primary-rgb), 0.9);
+  background: rgba(var(--color-primary-rgb), 0.95);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(var(--color-primary-rgb), 0.2);
+  box-shadow: 0 12px 28px rgba(var(--color-primary-rgb), 0.22);
 }
 
 .contactBtn:active {
@@ -311,16 +318,14 @@
 
 /* Main Frame */
 .avatarFrame {
-  width: 220px;
-  height: 300px;
-  border-radius: 120px 120px 0 0;
-
-  background: rgba(110, 231, 183, 0.04);
-  border: 1px solid rgba(110, 231, 183, 0.12);
-
+  width: 240px;
+  height: 340px;
+  border-radius: 130px 130px 0 0;
+  background: rgba(110, 231, 183, 0.05);
+  border: 1px solid rgba(110, 231, 183, 0.14);
+  box-shadow: inset 0 0 0 1px rgba(110, 231, 183, 0.04);
   overflow: hidden;
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -331,22 +336,25 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-
-  border-radius: 120px 120px 0 0;
-
+  border-radius: 130px 130px 0 0;
   animation: floating 4s ease-in-out infinite;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.avatarFrame:hover .heroImage {
+  transform: scale(1.02);
 }
 
 /* Background Glow */
 .imageGlow {
   position: absolute;
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
-
-  background: rgba(110, 231, 183, 0.05);
-  filter: blur(80px);
-
+  background: rgba(110, 231, 183, 0.08);
+  filter: blur(86px);
   z-index: -1;
 }
 /* ─── Floating badge ────────────────────────────────────────── */
@@ -418,6 +426,7 @@
     margin-top: 80px;
     min-height: unset;
     gap: 40px;
+    padding: 30px 0;
   }
 
   .content {
@@ -437,6 +446,7 @@
 
   .description {
     font-size: 14px;
+    max-width: 90vw;
   }
 
   .btnRow {
@@ -452,7 +462,7 @@
   }
 
   .heroImage {
-    width: 260px;
+    width: 300px;
     max-width: 70vw;
   }
 
