@@ -1,4 +1,3 @@
-import { useRef, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import styles from "./ContactModal.module.css";
 
@@ -26,12 +25,12 @@ const ContactModal = ({
       backdrop="static"
       animation={true}
     >
-      <div className={styles.modalBackdrop}>
+      <div className={styles.modalInner}>
+        {/* Header */}
         <Modal.Header className={styles.modalHeader} closeButton>
           <Modal.Title className={styles.modalTitle}>
-            <span className={styles.titleIcon}>
+            <span className={styles.titleIcon} aria-hidden="true">
               <svg
-                xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -39,39 +38,44 @@ const ContactModal = ({
                 strokeLinecap="round"
                 strokeLinejoin="round"
               >
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
               </svg>
             </span>
             Send a Message
           </Modal.Title>
         </Modal.Header>
 
+        {/* Body */}
         <Modal.Body className={styles.modalBody}>
-          <form ref={form} onSubmit={sendEmail} className={styles.contactForm}>
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className={styles.contactForm}
+            noValidate
+          >
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
-                <label htmlFor="user_name" className={styles.formLabel}>
+                <label htmlFor="modal_name" className={styles.formLabel}>
                   Your Name
                 </label>
                 <input
-                  id="user_name"
+                  id="modal_name"
                   type="text"
                   name="user_name"
-                  placeholder="John Doe"
+                  placeholder="Farzan Khan"
                   required
                   className={styles.formInput}
                 />
               </div>
-
               <div className={styles.formGroup}>
-                <label htmlFor="user_email" className={styles.formLabel}>
+                <label htmlFor="modal_email" className={styles.formLabel}>
                   Your Email
                 </label>
                 <input
-                  id="user_email"
+                  id="modal_email"
                   type="email"
                   name="user_email"
-                  placeholder="john@example.com"
+                  placeholder="you@email.com"
                   required
                   className={styles.formInput}
                 />
@@ -79,11 +83,11 @@ const ContactModal = ({
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="message" className={styles.formLabel}>
+              <label htmlFor="modal_message" className={styles.formLabel}>
                 Your Message
               </label>
               <textarea
-                id="message"
+                id="modal_message"
                 name="message"
                 placeholder="How can I help you?"
                 required
@@ -93,11 +97,11 @@ const ContactModal = ({
                 onFocus={() => setIsMessageFocused(true)}
                 onBlur={() => {
                   setTimeout(() => {
-                    const activeElement = document.activeElement;
-                    const isQuickMessageBtn = activeElement.closest(
-                      `.${styles.quickMessageBtn}`,
-                    );
-                    if (!isQuickMessageBtn) {
+                    if (
+                      !document.activeElement?.closest(
+                        `.${styles.quickMessageBtn}`,
+                      )
+                    ) {
                       setIsMessageFocused(false);
                     }
                   }, 100);
@@ -105,17 +109,17 @@ const ContactModal = ({
               />
             </div>
 
+            {/* Quick suggestions */}
             {isMessageFocused && (
               <div className={styles.quickMessages}>
                 <p className={styles.quickMessagesTitle}>
-                  <span className={styles.quickIcon}>💡</span>
-                  Quick Messages
+                  <span aria-hidden="true">💡</span> Quick suggestions
                 </p>
                 <div className={styles.quickMessageOptions}>
                   {filteredQuickMessages.length ? (
-                    filteredQuickMessages.map((msg, index) => (
+                    filteredQuickMessages.map((msg, i) => (
                       <button
-                        key={index}
+                        key={i}
                         type="button"
                         className={styles.quickMessageBtn}
                         onClick={() => selectQuickMessage(msg)}
@@ -131,18 +135,28 @@ const ContactModal = ({
               </div>
             )}
 
+            {/* Status */}
             {formStatus.submitted && (
               <div className={styles.successMessage}>
-                <svg className={styles.statusIcon} viewBox="0 0 24 24">
+                <svg
+                  className={styles.statusIcon}
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                 </svg>
                 {formStatus.message}
               </div>
             )}
-
             {formStatus.error && (
               <div className={styles.errorMessage}>
-                <svg className={styles.statusIcon} viewBox="0 0 24 24">
+                <svg
+                  className={styles.statusIcon}
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
                   <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z" />
                 </svg>
                 {formStatus.message}
@@ -151,6 +165,7 @@ const ContactModal = ({
           </form>
         </Modal.Body>
 
+        {/* Footer */}
         <Modal.Footer className={styles.modalFooter}>
           <Button
             variant="secondary"
@@ -167,25 +182,23 @@ const ContactModal = ({
           >
             {formStatus.submitting ? (
               <>
-                <span className={styles.loadingDot}></span>
-                <span className={styles.loadingDot}></span>
-                <span className={styles.loadingDot}></span>
-                Sending
+                <span className={styles.loadingDot} />
+                <span className={styles.loadingDot} />
+                <span className={styles.loadingDot} />
+                Sending…
               </>
             ) : (
               <>
                 <svg
                   className={styles.sendIcon}
-                  xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
+                  aria-hidden="true"
                 >
-                  <line x1="22" y1="2" x2="11" y2="13"></line>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
                 </svg>
                 Send Message
               </>

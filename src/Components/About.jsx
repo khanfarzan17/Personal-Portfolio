@@ -22,7 +22,7 @@ const About = () => {
               className={styles.aboutImage}
             />
             {/* Floating experience card */}
-            <div className={styles.expCard}>
+            {/* <div className={styles.expCard}>
               <span className={styles.expNum}>
                 2.5<span className={styles.expAccent}>+</span>
               </span>
@@ -31,34 +31,46 @@ const About = () => {
                 <br />
                 Experience
               </span>
-            </div>
+            </div> */}
           </div>
 
           {/* Quote block */}
           <blockquote className={styles.quote}>
-            "I build things for the web — and I care deeply about how they look,
-            feel, and perform."
+            "Transforming complex business requirements into intuitive digital
+            experiences."
           </blockquote>
           <div className={styles.strengthsSection}>
             <span className={styles.sectionTag}>Strengths</span>
             <div className={styles.strengthsGrid}>
               <div className={styles.strengthCard}>
-                <h3>Clean Code</h3>
+                <h3>Performance Optimization</h3>
                 <p>
-                  SOLID principles, reusable components, readable architecture.
+                  Reduced render bottlenecks and improved application
+                  responsiveness through profiling and optimization techniques.
                 </p>
               </div>
+
               <div className={styles.strengthCard}>
-                <h3>Fast Delivery</h3>
-                <p>Ship MVPs quickly without compromising quality.</p>
+                <h3>Scalable Architecture</h3>
+                <p>
+                  Build maintainable component systems and reusable frontend
+                  patterns.
+                </p>
               </div>
+
               <div className={styles.strengthCard}>
-                <h3>UI Precision</h3>
-                <p>Pixel-perfect interfaces with a strong design eye.</p>
+                <h3>Cross-Team Collaboration</h3>
+                <p>
+                  Work closely with designers, backend engineers, and
+                  stakeholders.
+                </p>
               </div>
+
               <div className={styles.strengthCard}>
-                <h3>Quick Learner</h3>
-                <p>Adapts fast to new stacks, tools, and domains.</p>
+                <h3>Business Impact</h3>
+                <p>
+                  Deliver solutions aligned with product goals and user needs.
+                </p>
               </div>
             </div>
           </div>
@@ -66,17 +78,41 @@ const About = () => {
 
         {/* Right — bio + cards */}
         <div className={styles.rightCol}>
+          <div className={styles.statsRow}>
+            <div className={styles.statCard}>
+              <span className={styles.expNum}>
+                2.5<span className={styles.expAccent}>+</span>
+              </span>
+              <span className={styles.expLabel}>Years Experience</span>
+            </div>
+
+            <div className={styles.statCard}>
+              <span className={styles.expNum}>
+                12<span className={styles.expAccent}>+</span>
+              </span>
+              <span className={styles.expLabel}>Technologies</span>
+            </div>
+
+            <div className={styles.statCard}>
+              <span className={styles.expNum}>
+                10<span className={styles.expAccent}>+</span>
+              </span>
+              <span className={styles.expLabel}>Enterprise Features</span>
+            </div>
+          </div>
           <p className={styles.bio}>
-            I'm a Frontend Developer with 2.5+ years of experience building
-            enterprise web applications and SaaS platforms. I specialize in
-            React.js, JavaScript, Redux Toolkit, and modern frontend
-            architectures. Throughout my career at SLK Software and Infosys,
-            I've worked with Manufacturing and Insurance domain clients,
-            developing scalable applications, integrating APIs, and delivering
-            high-performance user experiences that solve real business problems.
+            Frontend Engineer with 2.5+ years of experience building
+            enterprise-grade SaaS applications for global clients. Specialized
+            in React.js, JavaScript, TypeScript, and modern frontend
+            architecture with a strong focus on performance, scalability, and
+            user experience. I've contributed to large-scale manufacturing and
+            insurance platforms, delivering features used by thousands of users
+            while collaborating closely with product managers, designers, and
+            backend teams.
           </p>
 
           <ul className={styles.aboutItems}>
+            <span className={styles.itemTag}>Core Expertise</span>
             <li className={styles.aboutItem}>
               <div
                 className={styles.iconWrap}
@@ -92,11 +128,12 @@ const About = () => {
                   aria-hidden="true"
                 />
               </div>
+
               <div className={styles.aboutItemText}>
-                <h3>Frontend Developer</h3>
+                <h3>Frontend Engineering</h3>
                 <p>
-                  Building responsive, accessible, and blazing-fast UIs with
-                  React.js, Tailwind CSS, and Framer Motion.
+                  Building scalable React applications with modern architecture,
+                  performance optimization, and reusable component systems.
                 </p>
               </div>
             </li>
@@ -116,11 +153,13 @@ const About = () => {
                   aria-hidden="true"
                 />
               </div>
+
               <div className={styles.aboutItemText}>
-                <h3>Backend Developer</h3>
+                <h3>System Integration</h3>
                 <p>
-                  Developing fast REST APIs and backend systems with Node.js,
-                  Express.js, ASP.NET Core, and MySQL.
+                  Designing and integrating REST APIs, backend services,
+                  databases, and enterprise workflows across distributed
+                  systems.
                 </p>
               </div>
             </li>
@@ -140,11 +179,12 @@ const About = () => {
                   aria-hidden="true"
                 />
               </div>
+
               <div className={styles.aboutItemText}>
-                <h3>UI Designer</h3>
+                <h3>Product-Focused UI</h3>
                 <p>
-                  Designing polished landing pages and scalable design systems
-                  with a sharp eye for detail and consistency.
+                  Creating intuitive user experiences that balance business
+                  goals, accessibility, usability, and visual excellence.
                 </p>
               </div>
             </li>

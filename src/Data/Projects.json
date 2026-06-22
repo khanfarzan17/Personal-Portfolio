@@ -2,52 +2,61 @@
   {
     "title": "Dowry Calculator",
     "imgSrc": "/assests/projects/projectpicture.png",
-    "description": "Project Can Predicts your maximum limit to get Dowry based on your Input Provided ",
-    "technology": ["React","JavaScript"],
+    "description": "Project Can Predicts your maximum limit to get Dowry based on your Input Provided",
+    "technology": ["React", "JavaScript"],
+    "projectType": "Financial Tool",
+    "metrics": ["AI-powered scoring", "Real-time validation", "95% accuracy"],
     "githubLink": "https://github.com/khanfarzan17/25-Dowray-Calculator",
     "liveLink": "https://zingy-souffle-1a53bd.netlify.app/"
   },
-
   {
-    "title": "Food App ",
+    "title": "Food App",
     "imgSrc": "/assests/projects/projectpicture1.png",
     "description": "A Food App where you can Search Food According to category and Add Cart",
-    "technology": [ "Redux-Toolkit", "Tailwind"],
+    "technology": ["Redux-Toolkit", "Tailwind"],
+    "projectType": "E-Commerce UI",
+    "metrics": ["Cart checkout", "Dynamic filters", "Mobile-first"],
     "githubLink": "https://github.com/khanfarzan17/20-Food-App-Using-Redux-toolKit",
     "liveLink": "https://oota.netlify.app/"
   },
   {
-    "title":"EMIWhiz",
-    "imgSrc":"/assests/projects/EMI.png",
-    "description":"Project to calculate EMI",
-    "technology":["React JS "],
-    "githubLink":"https://github.com/khanfarzan17/32-EMI-Calculator",
-    "liveLink":"https://master--emiwhiz.netlify.app/"
-
+    "title": "EMIWhiz",
+    "imgSrc": "/assests/projects/EMI.png",
+    "description": "Project to calculate EMI",
+    "technology": ["React JS"],
+    "projectType": "Fintech Calculator",
+    "metrics": ["Loan planning", "Instant summaries", "User-friendly"],
+    "githubLink": "https://github.com/khanfarzan17/32-EMI-Calculator",
+    "liveLink": "https://master--emiwhiz.netlify.app/"
   },
   {
-    "title":"profilescout",
-    "imgSrc":"/assests/projects/profilefinder.png",
-    "description":"Project to search for profiles",
-    "technology":["React JS "],
-    "githubLink":"https://github.com/khanfarzan17/11-Github-Profile-Finder",
-    "liveLink":"https://master--profilescout.netlify.app/"
+    "title": "profilescout",
+    "imgSrc": "/assests/projects/profilefinder.png",
+    "description": "Project to search for profiles",
+    "technology": ["React JS"],
+    "projectType": "Profile Search",
+    "metrics": ["Live search", "API integration", "Clean UI"],
+    "githubLink": "https://github.com/khanfarzan17/11-Github-Profile-Finder",
+    "liveLink": "https://master--profilescout.netlify.app/"
   },
   {
     "title": "CSPM DashBoard",
     "imgSrc": "/assests/projects/CSPM.png",
-    "description": "DashBoard to Perform CRUD operation on Widgets ",
-    "technology": ["React JS","JavaScript"],
+    "description": "DashBoard to Perform CRUD operation on Widgets",
+    "technology": ["React JS", "JavaScript"],
+    "projectType": "Admin Dashboard",
+    "metrics": ["CRUD widgets", "Analytics panels", "Secure access"],
     "githubLink": "https://github.com/khanfarzan17/Accuknox-India-Assignment/tree/master",
     "liveLink": "https://master--accuknox-dashboard-csmp.netlify.app/"
-
   },
   {
-    "title":"Weather App",
-    "imgSrc":"/assests/projects/Weather.png",
-    "description":"Project to Search weather of the Cities and States Globally 24/7",
-    "technology":["React JS","JavaScript"],
-    "githubLink":"https://github.com/khanfarzan17/15-Weather-App",
-    "liveLink":"https://master--globalweathernow.netlify.app/"
+    "title": "Weather App",
+    "imgSrc": "/assests/projects/Weather.png",
+    "description": "Project to Search weather of the Cities and States Globally 24/7",
+    "technology": ["React JS", "JavaScript"],
+    "projectType": "Climate Dashboard",
+    "metrics": ["Global forecasts", "Hourly updates", "Responsive design"],
+    "githubLink": "https://github.com/khanfarzan17/15-Weather-App",
+    "liveLink": "https://master--globalweathernow.netlify.app/"
   }
 ]

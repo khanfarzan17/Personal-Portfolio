@@ -43,11 +43,24 @@ const Navbar = () => {
 
   const close = () => setMenuOpen(false);
 
+  const handleNavClick = (e, href) => {
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    close();
+  };
+
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`}>
       {/* Logo */}
       <a className={styles.title} href="/" onClick={close}>
         Farzan<span className={styles.dot}>.</span>
+        <span className={styles.statusDot}></span>
       </a>
 
       {/* Desktop links */}
@@ -59,6 +72,7 @@ const Navbar = () => {
               className={`${styles.navLink} ${
                 activeSection === href.replace("#", "") ? styles.active : ""
               }`}
+              onClick={(e) => handleNavClick(e, href)}
             >
               {label}
               <span className={styles.linkUnderline}></span>
@@ -107,7 +121,9 @@ const Navbar = () => {
                     ? styles.mobileActive
                     : ""
                 }`}
-                onClick={close}
+                onClick={(e) => {
+                  handleNavClick(e, href);
+                }}
               >
                 {label}
               </a>

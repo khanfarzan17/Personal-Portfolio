@@ -20,6 +20,41 @@
   backdrop-filter: blur(12px);
 }
 
+.container::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--color-primary-rgb), 0.15),
+    transparent,
+    rgba(96, 165, 250, 0.15)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.container:hover::before {
+  opacity: 1;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  top: -70px;
+  right: -70px;
+  background: radial-gradient(
+    circle,
+    rgba(var(--color-primary-rgb), 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
 .container:hover,
 .container.hovered {
   border-color: rgba(var(--color-primary-rgb), 0.22);
@@ -71,8 +106,8 @@
 }
 
 .container:hover .image {
-  transform: scale(1.04);
-  filter: brightness(0.55);
+  transform: scale(1.08);
+  filter: brightness(0.4);
 }
 
 /* Hover overlay */
@@ -84,6 +119,7 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  background: linear-gradient(to top, rgba(2, 6, 23, 0.9), rgba(2, 6, 23, 0.3));
 }
 
 .container:hover .imageOverlay {
@@ -93,22 +129,22 @@
 .overlayBtn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Syne", var(--font-roboto), sans-serif;
   color: var(--color-dark);
   background: var(--color-primary);
   text-decoration: none;
-  padding: 9px 18px;
-  border-radius: 7px;
+  padding: 10px 20px;
+  border-radius: 999px;
   transition:
     background 0.2s ease,
     transform 0.15s ease;
 }
 
 .overlayBtn:hover {
-  background: rgba(var(--color-primary-rgb), 0.9);
+  background: rgba(var(--color-primary-rgb), 0.95);
   transform: scale(1.04);
 }
 
@@ -120,6 +156,44 @@
   flex: 1;
   padding: 20px 22px 22px;
   gap: 10px;
+}
+
+.projectMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projectBadge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  background: rgba(var(--color-primary-rgb), 0.1);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.16);
+  padding: 6px 12px;
+  border-radius: 999px;
+  width: fit-content;
+}
+
+.projectStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--color-muted);
+}
+
+.projectStats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.projectStats span:not(:last-child)::after {
+  content: "•";
+  color: var(--color-muted);
 }
 
 /* ─── Title ─────────────────────────────────────────────────── */
@@ -141,9 +215,9 @@
 /* ─── Description ───────────────────────────────────────────── */
 
 .description {
-  font-size: 12px;
-  color: var(--color-muted);
-  line-height: 1.7;
+  font-size: 13px;
+  color: rgba(var(--color-text-rgb), 0.72);
+  line-height: 1.8;
   font-weight: 300;
   flex: 1;
 }
@@ -154,7 +228,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -162,12 +236,13 @@
 
 .skill {
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   color: var(--color-muted);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.06);
-  border: 0.5px solid rgba(255, 255, 255, 0.1);
-  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 12px;
   transition:
     color 0.2s ease,
     border-color 0.2s ease,
@@ -199,11 +274,11 @@
   justify-content: center;
   text-decoration: none;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Syne", var(--font-roboto), sans-serif;
   color: var(--color-dark);
   background: var(--color-primary);
-  border-radius: 7px;
+  border-radius: 999px;
   padding: 9px 14px;
   transition:
     background 0.2s ease,
