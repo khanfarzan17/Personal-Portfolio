@@ -2,6 +2,8 @@ import { useRef, useState, useEffect } from "react";
 import styles from "./Contact.module.css";
 import emailjs from "@emailjs/browser";
 import ContactModal from "./ContactModal";
+import LazyImage from "./LazyImage";
+import ScrollFadeIn from "./ScrollFadeIn";
 
 const SOCIALS = [
   {
@@ -319,33 +321,39 @@ const Contact = () => {
             {/* Social cards */}
             <div className={styles.socialBlock}>
               <div className={styles.socialGrid}>
-                {SOCIALS.map(({ href, label, img, color, border }) => (
-                  <a
+                {SOCIALS.map(({ href, label, img, color, border }, idx) => (
+                  <ScrollFadeIn
                     key={label}
-                    href={href}
-                    className={styles.socialCard}
-                    aria-label={label}
-                    target={href.startsWith("mailto") ? undefined : "_blank"}
-                    rel="noopener noreferrer"
-                    style={{ "--sc": color, "--sb": border }}
+                    direction="up"
+                    delay={idx * 0.08}
+                    duration={0.6}
                   >
-                    <div className={styles.socialIco}>
-                      <img src={img} alt="" aria-hidden="true" />
-                    </div>
-                    <span className={styles.socialName}>{label}</span>
-                    <svg
-                      className={styles.socialArrow}
-                      width="10"
-                      height="10"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      aria-hidden="true"
+                    <a
+                      href={href}
+                      className={styles.socialCard}
+                      aria-label={label}
+                      target={href.startsWith("mailto") ? undefined : "_blank"}
+                      rel="noopener noreferrer"
+                      style={{ "--sc": color, "--sb": border }}
                     >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  </a>
+                      <div className={styles.socialIco}>
+                        <LazyImage src={img} alt="" aria-hidden="true" />
+                      </div>
+                      <span className={styles.socialName}>{label}</span>
+                      <svg
+                        className={styles.socialArrow}
+                        width="10"
+                        height="10"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        aria-hidden="true"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </ScrollFadeIn>
                 ))}
               </div>
             </div>

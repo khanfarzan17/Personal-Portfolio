@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./Skills.module.css";
 import skillsData from "../Data/Skills.json";
 import { FaReact, FaServer, FaCloud } from "react-icons/fa";
+import LazyImage from "./LazyImage";
+import ScrollFadeIn from "./ScrollFadeIn";
 
 /* ── Icon lookup ──────────────────────────────────────────────── */
 const normalizeTitle = (value) =>
@@ -200,115 +202,123 @@ const Skills = () => {
       <div className={styles.skillsGrid}>
         {skillCategories
           .filter((c) => !active || c.title === active)
-          .map((category) => (
-            <div
+          .map((category, idx) => (
+            <ScrollFadeIn
               key={category.title}
-              className={styles.skillCard}
-              style={{
-                "--cat-color": category.color,
-                "--cat-bg": category.bg,
-                "--cat-border": category.border,
-              }}
+              direction="up"
+              delay={idx * 0.1}
+              duration={0.6}
             >
-              {/* Left accent bar */}
               <div
-                className={styles.cardAccentBar}
-                style={{ background: category.color }}
-              />
-
-              {/* Card header */}
-              <div className={styles.cardHeader}>
+                className={styles.skillCard}
+                style={{
+                  "--cat-color": category.color,
+                  "--cat-bg": category.bg,
+                  "--cat-border": category.border,
+                }}
+              >
+                {/* Left accent bar */}
                 <div
-                  className={styles.iconWrap}
-                  style={{
-                    background: category.bg,
-                    border: `0.5px solid ${category.border}`,
-                    color: category.color,
-                  }}
-                >
-                  {category.icon}
-                </div>
-                <div>
-                  <h3
-                    className={styles.cardTitle}
-                    style={{ color: category.color }}
+                  className={styles.cardAccentBar}
+                  style={{ background: category.color }}
+                />
+
+                {/* Card header */}
+                <div className={styles.cardHeader}>
+                  <div
+                    className={styles.iconWrap}
+                    style={{
+                      background: category.bg,
+                      border: `0.5px solid ${category.border}`,
+                      color: category.color,
+                    }}
                   >
-                    {category.title}
-                  </h3>
-                  <span className={styles.cardSubtitle}>
-                    {category.skills.length} technologies
-                  </span>
-                </div>
-                {/* Avg proficiency badge */}
-                <div
-                  className={styles.avgBadge}
-                  style={{
-                    color: category.color,
-                    background: category.bg,
-                    border: `0.5px solid ${category.border}`,
-                  }}
-                >
-                  {Math.round(
-                    category.skills.reduce((a, s) => a + s.level, 0) /
-                      category.skills.length,
-                  )}
-                  % avg
-                </div>
-              </div>
-
-              {/* Skill rows */}
-              <div className={styles.skillList}>
-                {category.skills.map((skill, i) => {
-                  const iconSrc = findSkillIcon(skill.name);
-                  return (
-                    <div
-                      key={skill.name}
-                      className={styles.skillItem}
-                      style={{ animationDelay: `${i * 0.06}s` }}
+                    {category.icon}
+                  </div>
+                  <div>
+                    <h3
+                      className={styles.cardTitle}
+                      style={{ color: category.color }}
                     >
-                      <div className={styles.skillTop}>
-                        <div className={styles.skillLabel}>
-                          {iconSrc ? (
-                            <div className={styles.skillIconWrap}>
-                              <img
-                                src={`/${iconSrc}`}
-                                alt={`${skill.name} logo`}
-                                className={styles.skillIcon}
-                              />
-                            </div>
-                          ) : (
-                            <div
-                              className={styles.skillIconWrap}
-                              style={{ background: category.bg }}
-                            >
-                              <span
-                                className={styles.skillInitial}
-                                style={{ color: category.color }}
-                              >
-                                {skill.name[0]}
-                              </span>
-                            </div>
-                          )}
-                          <span className={styles.skillName}>{skill.name}</span>
-                        </div>
-                        <span
-                          className={styles.skillPct}
-                          style={{ color: category.color }}
-                        >
-                          {skill.level}%
-                        </span>
-                      </div>
+                      {category.title}
+                    </h3>
+                    <span className={styles.cardSubtitle}>
+                      {category.skills.length} technologies
+                    </span>
+                  </div>
+                  {/* Avg proficiency badge */}
+                  <div
+                    className={styles.avgBadge}
+                    style={{
+                      color: category.color,
+                      background: category.bg,
+                      border: `0.5px solid ${category.border}`,
+                    }}
+                  >
+                    {Math.round(
+                      category.skills.reduce((a, s) => a + s.level, 0) /
+                        category.skills.length,
+                    )}
+                    % avg
+                  </div>
+                </div>
 
-                      <SkillBar
-                        level={skill.level}
-                        color={category.color}
-                        inView={inView}
-                      />
-                    </div>
-                  );
-                })}
+                {/* Skill rows */}
+                <div className={styles.skillList}>
+                  {category.skills.map((skill, i) => {
+                    const iconSrc = findSkillIcon(skill.name);
+                    return (
+                      <div
+                        key={skill.name}
+                        className={styles.skillItem}
+                        style={{ animationDelay: `${i * 0.06}s` }}
+                      >
+                        <div className={styles.skillTop}>
+                          <div className={styles.skillLabel}>
+                            {iconSrc ? (
+                              <div className={styles.skillIconWrap}>
+                                <LazyImage
+                                  src={`/${iconSrc}`}
+                                  alt={`${skill.name} logo`}
+                                  className={styles.skillIcon}
+                                />
+                              </div>
+                            ) : (
+                              <div
+                                className={styles.skillIconWrap}
+                                style={{ background: category.bg }}
+                              >
+                                <span
+                                  className={styles.skillInitial}
+                                  style={{ color: category.color }}
+                                >
+                                  {skill.name[0]}
+                                </span>
+                              </div>
+                            )}
+                            <span className={styles.skillName}>
+                              {skill.name}
+                            </span>
+                          </div>
+                          <span
+                            className={styles.skillPct}
+                            style={{ color: category.color }}
+                          >
+                            {skill.level}%
+                          </span>
+                        </div>
+
+                        <SkillBar
+                          level={skill.level}
+                          color={category.color}
+                          inView={inView}
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
+            </ScrollFadeIn>
           ))}
       </div>
 

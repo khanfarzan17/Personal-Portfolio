@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Education.module.css";
 import { FaSchool, FaCertificate, FaCloud, FaReact } from "react-icons/fa";
+import ScrollFadeIn from "./ScrollFadeIn";
 
 const githubUsername = "khanfarzan17";
 
@@ -26,146 +27,152 @@ const Education = () => {
 
         <div className={styles.eduGrid}>
           {/* B.E. */}
-          <div className={styles.eduC}>
-            <div
-              className={styles.eduAccentBar}
-              style={{ background: "#6EE7B7" }}
-            />
-            <div
-              className={styles.eduIco}
-              style={{
-                background: "rgba(110,231,183,0.1)",
-                border: "0.5px solid rgba(110,231,183,0.22)",
-                color: "#6EE7B7",
-              }}
-            >
-              <FaSchool />
-            </div>
-            <div className={styles.eduBody}>
-              <span
-                className={styles.eduBadge}
+          <ScrollFadeIn direction="up" delay={0} duration={0.6}>
+            <div className={styles.eduC}>
+              <div
+                className={styles.eduAccentBar}
+                style={{ background: "#6EE7B7" }}
+              />
+              <div
+                className={styles.eduIco}
                 style={{
+                  background: "rgba(110,231,183,0.1)",
+                  border: "0.5px solid rgba(110,231,183,0.22)",
                   color: "#6EE7B7",
-                  background: "rgba(110,231,183,0.08)",
-                  border: "0.5px solid rgba(110,231,183,0.18)",
                 }}
               >
-                Bachelor's Degree
-              </span>
-              <div className={styles.eduDeg}>
-                B.E. Computer Science &amp; Engineering
+                <FaSchool />
               </div>
-              <div className={styles.eduCol}>
-                HKBK College of Engineering, Bengaluru
-              </div>
-              <div className={styles.eduMetaRow}>
-                <span className={styles.eduChip}>
-                  <svg
-                    width="9"
-                    height="9"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                  </svg>
-                  2019 – 2023
-                </span>
+              <div className={styles.eduBody}>
                 <span
-                  className={styles.eduChip}
+                  className={styles.eduBadge}
                   style={{
                     color: "#6EE7B7",
-                    borderColor: "rgba(110,231,183,0.2)",
+                    background: "rgba(110,231,183,0.08)",
+                    border: "0.5px solid rgba(110,231,183,0.18)",
                   }}
                 >
-                  <svg
-                    width="9"
-                    height="9"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
-                  </svg>
-                  CGPA 8.3 / 10
+                  Bachelor's Degree
                 </span>
+                <div className={styles.eduDeg}>
+                  B.E. Computer Science &amp; Engineering
+                </div>
+                <div className={styles.eduCol}>
+                  HKBK College of Engineering, Bengaluru
+                </div>
+                <div className={styles.eduMetaRow}>
+                  <span className={styles.eduChip}>
+                    <svg
+                      width="9"
+                      height="9"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <path d="M16 2v4M8 2v4M3 10h18" />
+                    </svg>
+                    2019 – 2023
+                  </span>
+                  <span
+                    className={styles.eduChip}
+                    style={{
+                      color: "#6EE7B7",
+                      borderColor: "rgba(110,231,183,0.2)",
+                    }}
+                  >
+                    <svg
+                      width="9"
+                      height="9"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+                    </svg>
+                    CGPA 8.3 / 10
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollFadeIn>
 
           {/* PUC */}
-          <div className={styles.eduC}>
-            <div
-              className={styles.eduAccentBar}
-              style={{ background: "#60A5FA" }}
-            />
-            <div
-              className={styles.eduIco}
-              style={{
-                background: "rgba(96,165,250,0.1)",
-                border: "0.5px solid rgba(96,165,250,0.22)",
-                color: "#60A5FA",
-              }}
-            >
-              <FaCertificate />
-            </div>
-            <div className={styles.eduBody}>
-              <span
-                className={styles.eduBadge}
+          <ScrollFadeIn direction="up" delay={0.1} duration={0.6}>
+            <div className={styles.eduC}>
+              <div
+                className={styles.eduAccentBar}
+                style={{ background: "#60A5FA" }}
+              />
+              <div
+                className={styles.eduIco}
                 style={{
+                  background: "rgba(96,165,250,0.1)",
+                  border: "0.5px solid rgba(96,165,250,0.22)",
                   color: "#60A5FA",
-                  background: "rgba(96,165,250,0.08)",
-                  border: "0.5px solid rgba(96,165,250,0.18)",
                 }}
               >
-                12th Grade
-              </span>
-              <div className={styles.eduDeg}>Pre-University (PUC) Science</div>
-              <div className={styles.eduCol}>Karnataka State Board</div>
-              <div className={styles.eduMetaRow}>
-                <span className={styles.eduChip}>
-                  <svg
-                    width="9"
-                    height="9"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                  </svg>
-                  2019
-                </span>
+                <FaCertificate />
+              </div>
+              <div className={styles.eduBody}>
                 <span
-                  className={styles.eduChip}
+                  className={styles.eduBadge}
                   style={{
                     color: "#60A5FA",
-                    borderColor: "rgba(96,165,250,0.2)",
+                    background: "rgba(96,165,250,0.08)",
+                    border: "0.5px solid rgba(96,165,250,0.18)",
                   }}
                 >
-                  <svg
-                    width="9"
-                    height="9"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    aria-hidden="true"
-                  >
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
-                  </svg>
-                  67%
+                  12th Grade
                 </span>
+                <div className={styles.eduDeg}>
+                  Pre-University (PUC) Science
+                </div>
+                <div className={styles.eduCol}>Karnataka State Board</div>
+                <div className={styles.eduMetaRow}>
+                  <span className={styles.eduChip}>
+                    <svg
+                      width="9"
+                      height="9"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <rect x="3" y="4" width="18" height="18" rx="2" />
+                      <path d="M16 2v4M8 2v4M3 10h18" />
+                    </svg>
+                    2019
+                  </span>
+                  <span
+                    className={styles.eduChip}
+                    style={{
+                      color: "#60A5FA",
+                      borderColor: "rgba(96,165,250,0.2)",
+                    }}
+                  >
+                    <svg
+                      width="9"
+                      height="9"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+                    </svg>
+                    67%
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollFadeIn>
         </div>
 
         {/* ══ 02 — Certifications ══ */}
@@ -178,66 +185,70 @@ const Education = () => {
         </div>
 
         <div className={styles.certRow}>
-          <div className={styles.certC}>
-            <div
-              className={styles.certIc}
-              style={{
-                background: "rgba(251,191,36,0.1)",
-                border: "0.5px solid rgba(251,191,36,0.22)",
-                color: "#FBBF24",
-              }}
-            >
-              <FaCloud />
-            </div>
-            <div className={styles.certBody}>
-              <div className={styles.certName}>AWS Cloud Practitioner</div>
-              <div className={styles.certIssuer}>
-                Amazon Web Services <span className={styles.certDot}>·</span>{" "}
-                2024
+          <ScrollFadeIn direction="up" delay={0} duration={0.6}>
+            <div className={styles.certC}>
+              <div
+                className={styles.certIc}
+                style={{
+                  background: "rgba(251,191,36,0.1)",
+                  border: "0.5px solid rgba(251,191,36,0.22)",
+                  color: "#FBBF24",
+                }}
+              >
+                <FaCloud />
               </div>
+              <div className={styles.certBody}>
+                <div className={styles.certName}>AWS Cloud Practitioner</div>
+                <div className={styles.certIssuer}>
+                  Amazon Web Services <span className={styles.certDot}>·</span>{" "}
+                  2024
+                </div>
+              </div>
+              <span
+                className={styles.certVerified}
+                style={{
+                  color: "#FBBF24",
+                  background: "rgba(251,191,36,0.08)",
+                  border: "0.5px solid rgba(251,191,36,0.2)",
+                }}
+              >
+                ✓ Verified
+              </span>
             </div>
-            <span
-              className={styles.certVerified}
-              style={{
-                color: "#FBBF24",
-                background: "rgba(251,191,36,0.08)",
-                border: "0.5px solid rgba(251,191,36,0.2)",
-              }}
-            >
-              ✓ Verified
-            </span>
-          </div>
+          </ScrollFadeIn>
 
-          <div className={styles.certC}>
-            <div
-              className={styles.certIc}
-              style={{
-                background: "rgba(110,231,183,0.1)",
-                border: "0.5px solid rgba(110,231,183,0.22)",
-                color: "#6EE7B7",
-              }}
-            >
-              <FaReact />
-            </div>
-            <div className={styles.certBody}>
-              <div className={styles.certName}>
-                React Developer Certification
+          <ScrollFadeIn direction="up" delay={0.1} duration={0.6}>
+            <div className={styles.certC}>
+              <div
+                className={styles.certIc}
+                style={{
+                  background: "rgba(110,231,183,0.1)",
+                  border: "0.5px solid rgba(110,231,183,0.22)",
+                  color: "#6EE7B7",
+                }}
+              >
+                <FaReact />
               </div>
-              <div className={styles.certIssuer}>
-                Udemy <span className={styles.certDot}>·</span> 2022
+              <div className={styles.certBody}>
+                <div className={styles.certName}>
+                  React Developer Certification
+                </div>
+                <div className={styles.certIssuer}>
+                  Udemy <span className={styles.certDot}>·</span> 2022
+                </div>
               </div>
+              <span
+                className={styles.certVerified}
+                style={{
+                  color: "#6EE7B7",
+                  background: "rgba(110,231,183,0.08)",
+                  border: "0.5px solid rgba(110,231,183,0.2)",
+                }}
+              >
+                ✓ Verified
+              </span>
             </div>
-            <span
-              className={styles.certVerified}
-              style={{
-                color: "#6EE7B7",
-                background: "rgba(110,231,183,0.08)",
-                border: "0.5px solid rgba(110,231,183,0.2)",
-              }}
-            >
-              ✓ Verified
-            </span>
-          </div>
+          </ScrollFadeIn>
         </div>
 
         {/* ══ Stats strip ══ */}
