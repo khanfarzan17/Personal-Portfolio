@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CursorSpotlight from "./Components/CursorSpotlight";
+import ScrollToTopButton from "./Components/ScrollToTopButton";
 
 // Lazy load heavy components
 const About = lazy(() => import("./Components/About"));
@@ -42,6 +43,7 @@ const App = () => {
       <Suspense fallback={<LazyComponentFallback />}>
         <Contact />
       </Suspense>
+      <ScrollToTopButton />
     </div>
   );
 };

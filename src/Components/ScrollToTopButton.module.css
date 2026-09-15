@@ -1,0 +1,90 @@
+.btn {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(10, 14, 26, 0.55);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+
+  box-shadow:
+    0 8px 24px rgba(10, 14, 26, 0.35),
+    0 0 0 1px rgba(110, 231, 183, 0.16) inset;
+
+  transform: translateY(14px) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms ease;
+
+  z-index: 1200;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow:
+    0 12px 32px rgba(10, 14, 26, 0.45),
+    0 0 0 1px rgba(110, 231, 183, 0.32) inset,
+    0 0 18px rgba(110, 231, 183, 0.25);
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.97);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 8px 24px rgba(10, 14, 26, 0.35),
+    0 0 0 2px #6ee7b7;
+}
+
+.ring {
+  position: absolute;
+  inset: 0;
+  width: 44px;
+  height: 44px;
+  transform: rotate(-90deg);
+}
+
+.ringTrack {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 2;
+}
+
+.ringProgress {
+  fill: none;
+  stroke: #6ee7b7;
+  stroke-width: 2;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 120ms linear;
+}
+
+.icon {
+  position: relative;
+  width: 13px;
+  height: 13px;
+  color: #6ee7b7;
+  transition: transform 200ms ease;
+}
+
+.btn:hover .icon {
+  transform: translateY(-1px);
+}
